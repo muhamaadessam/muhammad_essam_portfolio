@@ -4,29 +4,28 @@ import 'package:muhammad_essam_portfolio/res/assets.dart';
 import '../../constants/colors.dart';
 
 class LeftSideWidget extends StatelessWidget {
-  const LeftSideWidget({super.key});
+  const LeftSideWidget({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // Take full available height
-      height: double.infinity,
+    return SizedBox(
+      width: 100,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
+            spacing: 4,
             children: [
               Container(
                 height: 100,
                 width: 2,
                 color: grayColor,
               ),
-              const SizedBox(height: 20),
               Image.asset(
                 Assets.github,
                 width: 32,
               ),
-              const SizedBox(height: 20),
               Image.asset(
                 Assets.linkedin,
                 width: 24,
@@ -34,19 +33,22 @@ class LeftSideWidget extends StatelessWidget {
               ),
             ],
           ),
-          Column(
-            children: [
-              Image.asset(
-                Assets.dots,
-                height: 100,
-              ),
-              const SizedBox(height: 40),
-              Image.asset(
-                Assets.rectangle,
-                height: 100,
-              ),
-              const SizedBox(height: 20),
-            ],
+          Spacer(
+            flex: 1,
+          ),
+          Image.asset(
+            Assets.dots,
+            height: 100,
+          ),
+          Spacer(
+            flex: 3,
+          ),
+          Image.asset(
+            Assets.rectangle,
+            height: 100,
+          ),
+          Spacer(
+            flex: 1,
           ),
         ],
       ),
