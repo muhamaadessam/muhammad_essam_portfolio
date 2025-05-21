@@ -14,7 +14,7 @@ class ContactsSection extends StatelessWidget {
       children: [
         HashHeadSection(
           text: 'contacts',
-          flex: 2,
+          flex: 1,
         ),
         Row(
           spacing: 64,
