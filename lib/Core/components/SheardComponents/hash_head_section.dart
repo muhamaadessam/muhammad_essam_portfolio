@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:muhammad_essam_portfolio/Home/Components/text_with_hash.dart';
+import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/text_with_hash.dart';
 
-import '../../Core/constants/colors.dart';
-import '../../Core/constants/text.dart';
+import '../../constants/colors.dart';
+import '../../constants/text.dart';
 
 class HashHeadSection extends StatelessWidget {
   const HashHeadSection({

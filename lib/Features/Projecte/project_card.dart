@@ -93,7 +93,8 @@ class ProjectCard extends StatelessWidget {
                         border: Border.all(color: mainColor),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 4),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8.0, vertical: 4),
                         child: TextBody16(
                           'Live <~>',
                           color: grayColor,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../Core/constants/colors.dart';
-import '../../Core/constants/text.dart';
+import '../../../Core/constants/colors.dart';
+import '../../../Core/constants/text.dart';
 
 class SkillCard extends StatelessWidget {
   const SkillCard({super.key, this.isFirst = false});

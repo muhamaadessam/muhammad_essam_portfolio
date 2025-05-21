@@ -1,5 +1,4 @@
 class Assets {
-
   //images
   static const String aboutMeImage = 'assets/images/aboutMeImage.png';
   static const String myFunFacts = 'assets/images/myFunFacts.png';
@@ -10,6 +9,7 @@ class Assets {
   static const String kahoot = 'assets/images/kahoot.png';
 
   //icons
+  static const String logo = 'assets/icons/essamLogo.png';
   static const String dots = 'assets/icons/dots.png';
   static const String github = 'assets/icons/github.png';
   static const String hash = 'assets/icons/hash.png';
