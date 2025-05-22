@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:muhammad_essam_portfolio/Core/components/app_responsive.dart';
 import 'package:muhammad_essam_portfolio/Core/constants/colors.dart';
 
 import '../../Core/components/SheardComponents/text_with_hash.dart';
 import '../../res/assets.dart';
+import '../../routes/routes.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -28,11 +30,14 @@ class CustomAppBar extends StatelessWidget {
               ),
               InkWell(
                 child: TextWithHash(text: 'works'),
-                onTap: () {},
+                onTap: () {
+                },
               ),
               InkWell(
                 child: TextWithHash(text: 'about-me'),
-                onTap: () {},
+                onTap: () {
+                  context.go(Routes.AboutMeScreen);
+                },
               ),
               InkWell(
                 child: TextWithHash(text: 'contacts'),

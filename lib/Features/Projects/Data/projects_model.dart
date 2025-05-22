@@ -1,5 +1,4 @@
 class ProjectsModel {
-
   final String projectName;
   final String projectDescription;
   final String projectImage;
@@ -8,7 +7,6 @@ class ProjectsModel {
   final String appStoreLink;
 
   ProjectsModel({
-
     required this.projectName,
     required this.projectDescription,
     required this.projectImage,
@@ -19,7 +17,6 @@ class ProjectsModel {
 
   factory ProjectsModel.fromJson(Map<String, dynamic> json) {
     return ProjectsModel(
-
       projectName: json['projectName'],
       projectDescription: json['projectDescription'],
       projectImage: json['projectImage'],
