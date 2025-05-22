@@ -16,9 +16,15 @@ class WebContactsSection extends StatelessWidget {
         HashHeadSection(
           text: 'contacts',
           flex: 1,
-
         ),
         Row(
+
+
+
+
+
+
+
           spacing: 64,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
