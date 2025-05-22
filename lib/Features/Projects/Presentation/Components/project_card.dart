@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/Core/constants/colors.dart';
 import 'package:muhammad_essam_portfolio/res/assets.dart';
 
+import '../../../Core/components/SheardComponents/box_widget.dart';
 import '../../../Core/constants/text.dart';
+import '../Data/projects_model.dart';
 
 class ProjectCard extends StatelessWidget {
-  const ProjectCard({super.key});
+  const ProjectCard({super.key, required this.project});
+
+  final ProjectsModel project;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +23,7 @@ class ProjectCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.asset(
-            Assets.chertNodes,
+            project.projectImage,
             width: double.infinity,
           ),
           Container(
@@ -31,40 +35,14 @@ class ProjectCard extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Wrap(
               spacing: 8,
-              children: [
-                TextBody16(
-                  'HTML',
-                  color: grayColor,
+              children:
+                List.generate(
+                  project.projectLanguages.length,
+                  (index) => TextBody16(
+                    project.projectLanguages[index],
+                    color: grayColor,
+                  ),
                 ),
-                TextBody16(
-                  'CSS',
-                  color: grayColor,
-                ),
-                TextBody16(
-                  'Python',
-                  color: grayColor,
-                ),
-                TextBody16(
-                  'Flask',
-                  color: grayColor,
-                ),
-                TextBody16(
-                  'HTML',
-                  color: grayColor,
-                ),
-                TextBody16(
-                  'CSS',
-                  color: grayColor,
-                ),
-                TextBody16(
-                  'Python',
-                  color: grayColor,
-                ),
-                TextBody16(
-                  'Flask',
-                  color: grayColor,
-                ),
-              ],
             ),
           ),
           Container(
@@ -79,28 +57,42 @@ class ProjectCard extends StatelessWidget {
               spacing: 8,
               children: [
                 TextBody24(
-                  'ChertNodes',
+                  project.projectName,
                   color: Colors.white,
                 ),
                 TextBody16(
-                  'Minecraft servers hosting ',
+                  project.projectDescription,
                   color: grayColor,
                 ),
                 Row(
+                  spacing: 16,
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: mainColor),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8.0, vertical: 4),
-                        child: TextBody16(
-                          'Live <~>',
-                          color: grayColor,
+                    if (project.googlePlayLink.isNotEmpty)
+                      GestureDetector(
+                        onTap: () {
+                          // launchURL(project.googlePlayLink);
+                        },
+                        child: BoxWidget(
+                          child: TextBody16(
+                            'Play Store',
+                            color: grayColor,
+                          ),
+                          color: mainColor,
                         ),
                       ),
-                    ),
+                    if (project.appStoreLink.isNotEmpty)
+                      GestureDetector(
+                        onTap: () {
+                          // launchURL(project.googlePlayLink);
+                        },
+                        child: BoxWidget(
+                          child: TextBody16(
+                            'App Store',
+                            color: grayColor,
+                          ),
+                          color: mainColor,
+                        ),
+                      ),
                   ],
                 ),
               ],
