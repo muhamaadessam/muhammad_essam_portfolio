@@ -1,0 +1,43 @@
+[
+  {
+    "projectName": "Kahoot",
+    "projectDescription": "Minecraft server hosting",
+    "projectImage": "assets/images/kahoot.png",
+    "projectLanguages": [
+      "Flutter",
+      "Dart",
+      "Cubit",
+      "Firebase"
+    ],
+    "googlePlayLink": "https://play.google.com/store/apps/details?id=com.kahoot.kahoot",
+    "appStoreLink": "https://apps.apple.com/us/app/kahoot/id6443904813"
+  },
+  {
+    "projectName": "protectX",
+    "projectDescription": "Minecraft server hosting",
+    "projectImage": "assets/images/protectX.png",
+    "projectLanguages": [
+      "Flutter",
+      "Dart",
+      "Bloc",
+      "Firebase"
+    ],
+    "googlePlayLink": "https://play.google.com/store/apps/details?id=com.kahoot.kahoot",
+    "appStoreLink": "https://apps.apple.com/us/app/kahoot/id6443904813"
+  },
+  {
+    "projectName": "Chert Nodes",
+    "projectDescription": "Minecraft server hosting",
+    "projectImage": "assets/images/chertNodes.png",
+    "projectLanguages": [
+      "Flutter",
+      "Dart",
+      "Bloc",
+      "Dart",
+      "Bloc",
+      "Firebase"
+    ],
+    "googlePlayLink": "https://play.google.com/store/apps/details?id=com.kahoot.kahoot",
+    "appStoreLink": "https://apps.apple.com/us/app/kahoot/id6443904813"
+  }
+]
