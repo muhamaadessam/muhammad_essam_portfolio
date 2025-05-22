@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/Core/constants/colors.dart';
 import 'package:muhammad_essam_portfolio/res/assets.dart';
 
-import '../../Core/constants/text.dart';
+import '../../../Core/constants/text.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({super.key});

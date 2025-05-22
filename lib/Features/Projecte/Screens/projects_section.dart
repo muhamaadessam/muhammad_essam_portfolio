@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:muhammad_essam_portfolio/Features/Projecte/project_card.dart';
+import 'package:muhammad_essam_portfolio/Features/Projecte/Components/project_card.dart';
 
-import '../../Core/components/SheardComponents/hash_head_section.dart';
+import '../../../Core/components/SheardComponents/hash_head_section.dart';
 
 class ProjectsSection extends StatelessWidget {
   const ProjectsSection({super.key});
