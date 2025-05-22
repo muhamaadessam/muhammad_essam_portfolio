@@ -18,13 +18,6 @@ class WebContactsSection extends StatelessWidget {
           flex: 1,
         ),
         Row(
-
-
-
-
-
-
-
           spacing: 64,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
