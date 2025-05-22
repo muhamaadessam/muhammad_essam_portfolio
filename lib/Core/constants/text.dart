@@ -7,7 +7,7 @@ class TextTitle extends StatelessWidget {
     this.textAlign,
     this.fontWeight = FontWeight.bold,
     this.fontSize = 32,
-    this.color = Colors.black,
+    this.color = Colors.white,
     this.maxLines = 1,
   });
 
@@ -42,7 +42,7 @@ class TextBody24 extends StatelessWidget {
     this.textAlign,
     this.fontWeight = FontWeight.normal,
     this.fontSize = 24,
-    this.color = Colors.black,
+    this.color = Colors.white,
     this.maxLines = 1,
   });
 
@@ -77,7 +77,7 @@ class TextBody16 extends StatelessWidget {
     this.textAlign,
     this.fontWeight = FontWeight.normal,
     this.fontSize = 16,
-    this.color = Colors.black,
+    this.color = Colors.white,
     this.maxLines = 1,
   });
 
@@ -112,7 +112,7 @@ class TextBody16 extends StatelessWidget {
 //     this.textAlign,
 //     this.fontWeight = FontWeight.normal,
 //     this.fontSize = 10,
-//     this.color = Colors.black,
+//     this.color = Colors.white,
 //   });
 //
 //   final String text;
@@ -144,7 +144,7 @@ class TextLink extends StatelessWidget {
     this.textAlign,
     this.fontWeight = FontWeight.normal,
     this.fontSize = 14,
-    this.color = Colors.black,
+    this.color = Colors.white,
     this.onTap,
   });
 

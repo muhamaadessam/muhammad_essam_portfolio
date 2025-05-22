@@ -1,46 +1,65 @@
 [
   {
-    "id": 0,
-    "projectName": "Kahoot",
-    "projectDescription": "Minecraft server hosting",
-    "projectImage": "assets/images/kahoot.png",
-    "projectLanguages": [
+    "title": "Main Skills",
+    "skills": [
+      "OOP",
+      "Data Structure",
+      "Problem Solving",
+      "Clean Architecture",
+      "Git / GitHub",
+      "UI /UX"
+    ]
+  },
+  {
+    "title": "Firebase",
+    "skills": [
+      "Firebase Storage",
+      "Firebase Database",
+      "Firebase Authentication",
+      "Cloud Firestore",
+      "Cloud Messaging"
+    ]
+  },
+  {
+    "title": "Development",
+    "skills": [
       "Flutter",
-      "Dart",
+      "Android Native"
+    ]
+  },
+  {
+    "title": "State Management",
+    "skills": [
+      "Bloc",
       "Cubit",
-      "Firebase"
-    ],
-    "googlePlayLink": "https://play.google.com/store/apps/details?id=com.kahoot.kahoot",
-    "appStoreLink": "https://apps.apple.com/us/app/kahoot/id6443904813"
+      "Provider",
+      "Getx"
+    ]
   },
   {
-    "id": 1,
-    "projectName": "protectX",
-    "projectDescription": "Minecraft server hosting",
-    "projectImage": "assets/images/protectX.png",
-    "projectLanguages": [
-      "Flutter",
-      "Dart",
-      "Bloc",
-      "Firebase"
-    ],
-    "googlePlayLink": "https://play.google.com/store/apps/details?id=com.kahoot.kahoot",
-    "appStoreLink": "https://apps.apple.com/us/app/kahoot/id6443904813"
+    "title": "Database",
+    "skills": [
+      "Local Database",
+      "RESTful API"
+    ]
   },
   {
-    "id": 1,
-    "projectName": "Chert Nodes",
-    "projectDescription": "Minecraft server hosting",
-    "projectImage": "assets/images/chertNodes.png",
-    "projectLanguages": [
-      "Flutter",
+    "title": "Programming Languages",
+    "skills": [
       "Dart",
-      "Bloc",
-      "Dart",
-      "Bloc",
-      "Firebase"
-    ],
-    "googlePlayLink": "https://play.google.com/store/apps/details?id=com.kahoot.kahoot",
-    "appStoreLink": "https://apps.apple.com/us/app/kahoot/id6443904813"
+      "Java",
+      "Kotlin",
+      "C++",
+      "C#",
+      "Python"
+    ]
+  },
+  {
+    "title": "Tools",
+    "skills": [
+      "Android Studio",
+      "Postman",
+      "Figma"
+    ]
   }
 ]

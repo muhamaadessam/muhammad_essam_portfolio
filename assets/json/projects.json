@@ -1,6 +1,5 @@
 [
   {
-    "id": 0,
     "projectName": "Kahoot",
     "projectDescription": "Minecraft server hosting",
     "projectImage": "assets/images/kahoot.png",
@@ -14,7 +13,6 @@
     "appStoreLink": "https://apps.apple.com/us/app/kahoot/id6443904813"
   },
   {
-    "id": 1,
     "projectName": "protectX",
     "projectDescription": "Minecraft server hosting",
     "projectImage": "assets/images/protectX.png",
@@ -28,7 +26,6 @@
     "appStoreLink": "https://apps.apple.com/us/app/kahoot/id6443904813"
   },
   {
-    "id": 1,
     "projectName": "Chert Nodes",
     "projectDescription": "Minecraft server hosting",
     "projectImage": "assets/images/chertNodes.png",

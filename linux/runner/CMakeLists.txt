@@ -5,7 +5,7 @@ project(runner LANGUAGES CXX)
 # top-level CMakeLists.txt, not the value here, or `flutter run` will no longer
 # work.
 #
-# Any new source files that you add to the application should be added here.
+# Any new source json that you add to the application should be added here.
 add_executable(${BINARY_NAME}
   "main.cc"
   "my_application.cc"

@@ -30,19 +30,22 @@ class WebContactsSection extends StatelessWidget {
               ),
             ),
             BoxWidget(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 16,
-                children: [
-                  TextBody16(
-                    'Messages me here',
-                    color: Colors.white,
-                  ),
-                  TextBody16(
-                    'Whatsapp: +380 66 666 66 66',
-                    color: Colors.white,
-                  ),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 16,
+                  children: [
+                    TextBody16(
+                      'Messages me here',
+                      color: Colors.white,
+                    ),
+                    TextBody16(
+                      'Whatsapp: +20 101 702 2791',
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
               ),
               color: grayColor,
             ),

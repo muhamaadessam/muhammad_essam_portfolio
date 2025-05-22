@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:muhammad_essam_portfolio/Features/Skills/Data/skill_model.dart';
 
 import '../../../Core/constants/colors.dart';
 import '../../../Core/constants/text.dart';
 
 class SkillCard extends StatelessWidget {
-  const SkillCard({super.key, this.isFirst = false});
+  const SkillCard({super.key, required this.skill,});
 
-  final bool isFirst;
-
+final SkillModel skill;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
       ),
-      width: 170,
+      width: 250,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(8),
             child: TextBody16(
-              'Languages',
+              skill.title,
               color: Colors.white,
             ),
           ),
@@ -35,29 +35,14 @@ class SkillCard extends StatelessWidget {
             child: Wrap(
               spacing: 8,
               runSpacing: 8,
-              children: [
-                TextBody16(
-                  'Flutter',
-                  color: grayColor,
-                ),
-                TextBody16(
-                  'TypeScript',
-                  color: grayColor,
-                ),
-                TextBody16(
-                  'Lua',
-                  color: grayColor,
-                ),
-                TextBody16(
-                  'JavaScript',
-                  color: grayColor,
-                ),
-                if (isFirst)
-                  TextBody16(
-                    'Python',
+              children: List.generate(
+                  skill.skills.length,
+                  (index) => TextBody16(
+                    skill.skills[index],
                     color: grayColor,
                   ),
-              ],
+                ),
+
             ),
           ),
         ],

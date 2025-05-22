@@ -1,11 +1,11 @@
 {
-    "name": "muhammad_essam_portfolio",
-    "short_name": "muhammad_essam_portfolio",
+    "name": "Muhammad Essam",
+    "short_name": "Muhammad Essam",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Muhammad Essam Portfolio.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

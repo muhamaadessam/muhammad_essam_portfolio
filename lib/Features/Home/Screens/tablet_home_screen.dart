@@ -5,7 +5,7 @@ import '../../AppBar/tablet_app_bar.dart';
 import '../../Contacts/tablet_contacts_section.dart';
 import '../../Footer/tablet_footer_section.dart';
 import '../../Profile/Screens/web_profile_section.dart';
-import '../../Projecte/Screens/projects_section.dart';
+import '../../Projects/Presentation/Screens/projects_section.dart';
 import '../../Skills/Sections/tablet_skills_section.dart';
 
 class TabletHomeScreen extends StatelessWidget {

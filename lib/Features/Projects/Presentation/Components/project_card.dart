@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/Core/constants/colors.dart';
-import 'package:muhammad_essam_portfolio/res/assets.dart';
 
-import '../../../Core/components/SheardComponents/box_widget.dart';
-import '../../../Core/constants/text.dart';
-import '../Data/projects_model.dart';
+import '../../../../Core/components/SheardComponents/box_widget.dart';
+import '../../../../Core/constants/text.dart';
+import '../../Data/projects_model.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({super.key, required this.project});
@@ -14,7 +13,7 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
+      width: 350,
       decoration: BoxDecoration(
         border: Border.all(color: grayColor),
       ),

@@ -24,6 +24,9 @@ class WebHomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 50,
+            ),
             WebFooterSection(),
           ],
         ),

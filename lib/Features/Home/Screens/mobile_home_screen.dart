@@ -5,7 +5,7 @@ import '../../AppBar/mobile_app_bar.dart';
 import '../../Contacts/mobile_contacts_section.dart';
 import '../../Footer/mobile_footer_section.dart';
 import '../../Profile/Screens/tablet_profile_section.dart';
-import '../../Projecte/Screens/projects_section.dart';
+import '../../Projects/Presentation/Screens/projects_section.dart';
 import '../../Skills/Sections/mobile_skills_section.dart';
 
 class MobileHomeScreen extends StatelessWidget {
