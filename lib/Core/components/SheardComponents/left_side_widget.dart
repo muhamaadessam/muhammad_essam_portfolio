@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/res/assets.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../constants/colors.dart';
 
@@ -22,14 +23,34 @@ class LeftSideWidget extends StatelessWidget {
                 width: 2,
                 color: grayColor,
               ),
-              Image.asset(
-                Assets.github,
-                width: 32,
+              InkWell(
+                onTap: () async {
+                  final Uri _url = Uri.parse('https://github.com/muhamaadessam');
+
+                  if (!await launchUrl(_url)) {
+                    throw Exception('Could not launch $_url');
+                  }
+                },
+                child: Image.asset(
+                  Assets.github,
+                  width: 32,
+                  semanticLabel: 'github',
+                ),
               ),
-              Image.asset(
-                Assets.linkedin,
-                width: 24,
-                color: grayColor,
+              InkWell(
+                onTap: () async {
+                  final Uri _url = Uri.parse('https://www.linkedin.com/in/muhammadessam159');
+
+                  if (!await launchUrl(_url)) {
+                    throw Exception('Could not launch $_url');
+                  }
+                },
+                child: Image.asset(
+                  Assets.linkedin,
+                  width: 24,
+                  color: grayColor,
+                  semanticLabel: 'linkedin',
+                ),
               ),
             ],
           ),
