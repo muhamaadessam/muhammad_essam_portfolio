@@ -1,24 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/box_widget.dart';
 
-import '../../Core/components/SheardComponents/hash_head_section.dart';
-import '../../Core/constants/colors.dart';
-import '../../Core/constants/text.dart';
+import '../../../Core/components/SheardComponents/hash_head_section.dart';
+import '../../../Core/components/SheardComponents/text_with_slash.dart';
+import '../../../Core/constants/colors.dart';
+import '../../../Core/constants/text.dart';
 
-class TabletContactsSection extends StatelessWidget {
-  const TabletContactsSection({super.key});
+class WebContactsSection extends StatelessWidget {
+  const WebContactsSection({super.key, required this.inHome});
+
+  final bool inHome;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 24,
+      spacing: 32,
       children: [
-        HashHeadSection(
-          text: 'contacts',
-          flex: 1,
-        ),
+        if (inHome)
+          HashHeadSection(
+            text: 'contacts',
+            flex: 1,
+          )
+        else
+          TextWithSlash(text: 'contacts'),
         Row(
-          spacing: 32,
+          spacing: 64,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

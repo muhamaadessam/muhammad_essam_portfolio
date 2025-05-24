@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../Core/components/SheardComponents/hash_head_section.dart';
+import '../../../../Core/components/SheardComponents/text_with_slash.dart';
+import '../../../../routes/routes.dart';
 import '../../Data/load_projects.dart';
 import '../../Data/projects_model.dart';
 import '../Components/project_card.dart';
 
-
 class ProjectsSection extends StatelessWidget {
-  const ProjectsSection({super.key});
+  const ProjectsSection({super.key, required this.inHome});
+
+  final bool inHome;
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +28,17 @@ class ProjectsSection extends StatelessWidget {
           return Column(
             spacing: 32,
             children: [
-              HashHeadSection(
-                text: 'projects',
-                isViewAll: true,
-                flex: 4,
-              ),
+              if (inHome)
+                HashHeadSection(
+                  text: 'projects',
+                  isViewAll: true,
+                  onTap: () {
+                    context.go(Routes.worksScreen);
+                  },
+                  flex: 4,
+                )
+              else
+                TextWithSlash(text: 'projects'),
               Wrap(
                 spacing: 32,
                 runSpacing: 32,

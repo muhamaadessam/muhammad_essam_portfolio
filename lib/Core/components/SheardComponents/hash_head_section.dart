@@ -10,11 +10,13 @@ class HashHeadSection extends StatelessWidget {
     required this.text,
     this.isViewAll = false,
     this.flex = 1,
+    this.onTap,
   });
 
   final String text;
   final bool isViewAll;
   final int flex;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +37,12 @@ class HashHeadSection extends StatelessWidget {
           flex: 3,
         ),
         if (isViewAll)
-          TextBody16(
-            'View all ~~>',
-            color: Colors.white,
+          InkWell(
+            onTap: onTap,
+            child: TextBody16(
+              'View all ~~>',
+              color: Colors.white,
+            ),
           ),
       ],
     );

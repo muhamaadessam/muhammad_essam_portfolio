@@ -21,7 +21,8 @@ class ProfileImagesSection extends StatelessWidget {
             ),
           ),
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 2),
-          child: Wrap(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
             spacing: 8,
             children: [
               Container(
@@ -31,7 +32,7 @@ class ProfileImagesSection extends StatelessWidget {
               ),
               RichText(
                 text: TextSpan(
-                  text: 'Currently working on',
+                  text: 'Currently working at ',
                   style: TextStyle(
                     color: grayColor,
                     fontSize: 16,
@@ -39,7 +40,7 @@ class ProfileImagesSection extends StatelessWidget {
                   ),
                   children: [
                     TextSpan(
-                      text: ' Portfolio',
+                      text: 'MyCash',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,

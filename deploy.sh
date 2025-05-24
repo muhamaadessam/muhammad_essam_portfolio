@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # clean and get dependencies
-flutter clean
-flutter pub get
+#flutter clean
+#flutter pub get
 
 # Build the Flutter web app
 flutter build web
 
 # Navigate to the built files
+#cp web/404.html build/web/
 cd build/web
 
 # Initialize a temporary repo and push to GitHub Pages

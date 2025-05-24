@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../res/assets.dart';
+import '../../constants/colors.dart';
 import '../../constants/text.dart';
 
 class TextWithHash extends StatelessWidget {
@@ -13,9 +13,11 @@ class TextWithHash extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(
-          Assets.hash,
-          height: 16,
+        TextBody16(
+          '#',
+          fontWeight: FontWeight.bold,
+          fontSize: 24,
+          color: mainColor,
         ),
         const SizedBox(
           width: 2,
@@ -23,6 +25,7 @@ class TextWithHash extends StatelessWidget {
         TextBody16(
           text,
           color: color ?? Colors.white,
+          // fontWeight: FontWeight.bold,
         ),
       ],
     );

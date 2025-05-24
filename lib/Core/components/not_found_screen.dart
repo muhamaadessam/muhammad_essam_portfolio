@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:muhammad_essam_portfolio/Core/constants/text.dart';
+
+import '../../res/assets.dart';
+import '../../routes/routes.dart';
+import 'CustomWidgets/custom_button.dart';
 
 class NotFoundScreen extends StatelessWidget {
   const NotFoundScreen({super.key});
@@ -10,9 +15,35 @@ class NotFoundScreen extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            TextTitle('404', fontSize: 40,),
-            TextTitle('Page Not Found',fontSize: 30,),
+          children: [
+            Image.asset(
+              Assets.logo,
+              height: 100,
+            ),
+            const SizedBox(
+              height: 32,
+            ),
+            TextTitle(
+              '404',
+              fontSize: 40,
+            ),
+            TextTitle(
+              'Page Not Found',
+              fontSize: 30,
+            ),
+            const SizedBox(
+              height: 64,
+            ),
+            SizedBox(
+              height: 50,
+              child: CustomButton(
+                onPressed: () => context.go(Routes.homeScreen),
+                child: TextBody16(
+                  'Back Home',
+                  fontSize: 24,
+                ),
+              ),
+            ),
           ],
         ),
       ),

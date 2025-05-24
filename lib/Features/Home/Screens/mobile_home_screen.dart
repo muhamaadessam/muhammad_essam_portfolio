@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../AbouMe/mobile_about_me_section.dart';
+import '../../../Core/components/Drawer/drawer.dart';
+import '../../AbouMe/Components/HomeSections/mobile_about_me_section.dart';
 import '../../AppBar/mobile_app_bar.dart';
-import '../../Contacts/mobile_contacts_section.dart';
+import '../../Contacts/HomeSections/mobile_contacts_section.dart';
 import '../../Footer/mobile_footer_section.dart';
 import '../../Profile/Screens/tablet_profile_section.dart';
 import '../../Projects/Presentation/Screens/projects_section.dart';
@@ -14,6 +15,7 @@ class MobileHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -25,10 +27,16 @@ class MobileHomeScreen extends StatelessWidget {
                 children: [
                   MobileAppBar(),
                   MobileProfileSection(),
-                  ProjectsSection(),
-                  MobileSkillsSection(),
-                  MobileAboutMeSection(),
-                  MobileContactsSection(),
+                  ProjectsSection(inHome: true),
+                  MobileSkillsSection(
+                    inHome: true,
+                  ),
+                  MobileAboutMeSection(
+                    inHome: true,
+                  ),
+                  MobileContactsSection(
+                    inHome: true,
+                  ),
                 ],
               ),
             ),

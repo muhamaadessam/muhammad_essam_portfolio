@@ -1,41 +1,48 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:muhammad_essam_portfolio/Features/AbouMe/about_me_screen.dart';
 import 'package:muhammad_essam_portfolio/routes/routes.dart';
 
 import '../Core/components/not_found_screen.dart';
+import '../Features/Contacts/contacts_screen.dart';
 import '../Features/Home/Screens/home_screen.dart';
+import '../Features/Projects/Presentation/Screens/projects_screen.dart';
 import '../main.dart';
 
 class AppPages {
-  AppPages._();
-
   static late final GoRouter router;
 
-  static initializeRouter(String initialRoute) {
+  static initializeRouter() {
     router = GoRouter(
       navigatorKey: navigatorKey,
-      initialLocation: initialRoute,
       routes: <RouteBase>[
         GoRoute(
-          path: Routes.home,
-          builder: (context, state) => HomeScreen(),
-          routes: <RouteBase>[
-            GoRoute(
-              path: '/projects',
-              builder: (context, state) => HomeScreen(),
-            ),
-            GoRoute(
-              path: Routes.AboutMeScreen,
-              builder: (context, state) => AboutMeScreen(),
-            ),
-            GoRoute(
-              path: '/contacts',
-              builder: (context, state) => HomeScreen(),
-            ),
-          ],
+          path: Routes.homeScreen,
+          builder: (context, state) => const HomeScreen(),
+        ),
+        GoRoute(
+          path: Routes.worksScreen,
+          builder: (context, state) => const ProjectsScreen(),
+        ),
+        GoRoute(
+          path: Routes.aboutMeScreen,
+          builder: (context, state) => const AboutMeScreen(),
+        ),
+        GoRoute(
+          path: Routes.contactsScreen,
+          builder: (context, state) => const ContactsScreen(),
         ),
       ],
-      errorBuilder: (context, state) => NotFoundScreen(),
+      errorPageBuilder: (context, state) => MaterialPage<void>(
+        key: state.pageKey,
+        child: const NotFoundScreen(),
+      ),
+      // errorBuilder: (context, state) => const NotFoundScreen(),
+      // Remove initialLocation to let router handle restored paths
+      redirect: (context, state) {
+        // Optional: Add any auth/redirect logic here
+        return null;
+      },
     );
   }
 }

@@ -5,9 +5,13 @@ import '../../../Core/constants/colors.dart';
 import '../../../Core/constants/text.dart';
 
 class SkillCard extends StatelessWidget {
-  const SkillCard({super.key, required this.skill,});
+  const SkillCard({
+    super.key,
+    required this.skill,
+  });
 
-final SkillModel skill;
+  final SkillModel skill;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,13 +40,12 @@ final SkillModel skill;
               spacing: 8,
               runSpacing: 8,
               children: List.generate(
-                  skill.skills.length,
-                  (index) => TextBody16(
-                    skill.skills[index],
-                    color: grayColor,
-                  ),
+                skill.skills.length,
+                (index) => TextBody16(
+                  skill.skills[index],
+                  color: grayColor,
                 ),
-
+              ),
             ),
           ),
         ],

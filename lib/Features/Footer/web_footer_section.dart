@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/Core/constants/colors.dart';
 import 'package:muhammad_essam_portfolio/Core/constants/text.dart';
 
+import '../../Core/components/CustomWidgets/icon_link.dart';
+import '../../Core/constants/url_launcher.dart';
 import '../../res/assets.dart';
 
 class WebFooterSection extends StatelessWidget {
@@ -23,7 +25,7 @@ class WebFooterSection extends StatelessWidget {
             children: [
               footerSection(),
               TextBody16(
-                '© Copyright 2022. Made by Muhammad Essam',
+                '©Copyright 2025. Made by Muhammad Essam',
                 color: grayColor,
                 fontSize: 12,
               ),
@@ -65,19 +67,30 @@ class WebFooterSection extends StatelessWidget {
             Row(
               spacing: 8,
               children: [
-                Image.asset(
-                  Assets.linkedin,
-                  height: 24,
-                  color: grayColor,
+                IconLink(
+                  name: 'linkedin',
+                  icon: Assets.linkedin,
+                  url: Links.linkedIn,
                 ),
-                Image.asset(
-                  Assets.github,
-                  height: 24,
+                IconLink(
+                  name: 'github',
+                  icon: Assets.github,
+                  url: Links.github,
                 ),
-                Image.asset(
-                  Assets.linkedin,
-                  height: 24,
-                  color: grayColor,
+                IconLink(
+                  name: 'facebook',
+                  icon: Assets.facebook,
+                  url: Links.facebook,
+                ),
+                IconLink(
+                  name: 'whatsapp',
+                  icon: Assets.whatsapp,
+                  url: Links.whatsapp,
+                ),
+                IconLink(
+                  name: 'instagram',
+                  icon: Assets.instagram,
+                  url: Links.instagram,
                 ),
               ],
             ),

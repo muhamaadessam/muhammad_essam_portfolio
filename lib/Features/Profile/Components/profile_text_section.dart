@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/box_widget.dart';
 
 import '../../../Core/constants/colors.dart';
 import '../../../Core/constants/text.dart';
+import '../../../routes/routes.dart';
 
 class ProfileTextSection extends StatelessWidget {
   const ProfileTextSection({super.key});
@@ -42,12 +44,17 @@ class ProfileTextSection extends StatelessWidget {
           maxLines: 10,
         ),
         SizedBox(height: 24),
-        BoxWidget(
-          child: TextBody16(
-            'Contact me!!',
-            color: Colors.white,
+        InkWell(
+          onTap: () {
+            context.go(Routes.contactsScreen);
+          },
+          child: BoxWidget(
+            child: TextBody16(
+              'Contact me!!',
+              color: Colors.white,
+            ),
+            color: mainColor,
           ),
-          color: mainColor,
         ),
       ],
     );

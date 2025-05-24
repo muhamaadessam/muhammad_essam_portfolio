@@ -38,6 +38,7 @@ dependencies:
   url_launcher: ^6.3.1
   go_router: ^15.1.2
   url_strategy: ^0.3.0
+#  flutter_web_plugins: any
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +85,7 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/json/
+    - assets/pdfs/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 

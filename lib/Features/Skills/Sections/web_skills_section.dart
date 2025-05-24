@@ -7,7 +7,9 @@ import '../Data/load_skills.dart';
 import '../Data/skill_model.dart';
 
 class WebSkillsSection extends StatelessWidget {
-  const WebSkillsSection({super.key});
+  const WebSkillsSection({super.key, required this.inHome});
+
+  final bool inHome;
 
   @override
   Widget build(BuildContext context) {
@@ -29,33 +31,33 @@ class WebSkillsSection extends StatelessWidget {
               }
 
               final skills = snapshot.data as List<SkillModel>;
-            return Row(
-              spacing: 64,
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Image.asset(
-                    Assets.skillsImage,
-                    width: double.infinity,
-                  ),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Wrap(
-                    spacing: 16,
-                    runSpacing: 16,
-                    children: List.generate(
-                      skills.length,
-                          (index) => SkillCard(
-                        skill: skills[index],
+              return Row(
+                spacing: 64,
+                children: [
+                  if (inHome)
+                    Expanded(
+                      flex: 2,
+                      child: Image.asset(
+                        Assets.skillsImage,
+                        width: double.infinity,
+                      ),
+                    ),
+                  Expanded(
+                    flex: 3,
+                    child: Wrap(
+                      spacing: 16,
+                      runSpacing: 16,
+                      children: List.generate(
+                        skills.length,
+                        (index) => SkillCard(
+                          skill: skills[index],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            );
-          }
-        ),
+                ],
+              );
+            }),
       ],
     );
   }

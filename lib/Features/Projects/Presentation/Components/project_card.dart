@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/Core/constants/colors.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../Core/components/SheardComponents/box_widget.dart';
 import '../../../../Core/constants/text.dart';
+import '../../../../Core/constants/url_launcher.dart';
 import '../../Data/projects_model.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -63,7 +63,7 @@ class ProjectCard extends StatelessWidget {
                     spacing: 16,
                     children: List.generate(
                       project.projectLanguages.length,
-                          (index) => Row(
+                      (index) => Row(
                         children: [
                           Container(
                             width: 8,
@@ -85,7 +85,6 @@ class ProjectCard extends StatelessWidget {
                     ),
                   ),
                 ),
-
               ],
             ),
           Padding(
@@ -96,11 +95,12 @@ class ProjectCard extends StatelessWidget {
                 if (project.googlePlayLink.isNotEmpty)
                   InkWell(
                     onTap: () async {
-                      final Uri _url = Uri.parse(project.googlePlayLink);
-
-                      if (!await launchUrl(_url)) {
-                      throw Exception('Could not launch $_url');
-                      }
+                      urlLauncher(project.googlePlayLink);
+                      // final Uri _url = Uri.parse(project.googlePlayLink);
+                      //
+                      // if (!await launchUrl(_url)) {
+                      //   throw Exception('Could not launch $_url');
+                      // }
                     },
                     child: BoxWidget(
                       child: TextBody16(
@@ -113,14 +113,16 @@ class ProjectCard extends StatelessWidget {
                 if (project.appStoreLink.isNotEmpty)
                   InkWell(
                     onTap: () async {
-                      final Uri url = Uri.parse(project.appStoreLink);
-                      if (await canLaunchUrl(url)) {
-                        await launchUrl(
-                          url,
-                          mode: LaunchMode.externalApplication, // For opening outside app
-                          webOnlyWindowName: '_blank', // For web
-                        );
-                      }
+                      urlLauncher(project.appStoreLink);
+                      // final Uri url = Uri.parse(project.appStoreLink);
+                      // if (await canLaunchUrl(url)) {
+                      //   await launchUrl(
+                      //     url,
+                      //     mode: LaunchMode.externalApplication,
+                      //     // For opening outside app
+                      //     webOnlyWindowName: '_blank', // For web
+                      //   );
+                      // }
                     },
                     child: BoxWidget(
                       child: TextBody16(

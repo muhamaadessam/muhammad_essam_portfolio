@@ -1,33 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/box_widget.dart';
 
-import '../../Core/components/SheardComponents/hash_head_section.dart';
-import '../../Core/constants/colors.dart';
-import '../../Core/constants/text.dart';
+import '../../../Core/components/SheardComponents/hash_head_section.dart';
+import '../../../Core/components/SheardComponents/text_with_slash.dart';
+import '../../../Core/constants/colors.dart';
+import '../../../Core/constants/text.dart';
 
-class WebContactsSection extends StatelessWidget {
-  const WebContactsSection({super.key});
+class MobileContactsSection extends StatelessWidget {
+  const MobileContactsSection({super.key, required this.inHome});
+
+  final bool inHome;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      spacing: 32,
+      spacing: 16,
       children: [
-        HashHeadSection(
-          text: 'contacts',
-          flex: 1,
-        ),
-        Row(
-          spacing: 64,
+        if (inHome)
+          HashHeadSection(
+            text: 'contacts',
+            flex: 1,
+          )
+        else
+          TextWithSlash(text: 'contacts'),
+        Column(
+          spacing: 16,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-              child: TextBody16(
-                'I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me',
-                color: grayColor,
-                maxLines: 15,
-              ),
+            TextBody16(
+              'I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me',
+              color: grayColor,
+              maxLines: 15,
             ),
             BoxWidget(
               child: Padding(

@@ -7,17 +7,20 @@ import '../Data/load_skills.dart';
 import '../Data/skill_model.dart';
 
 class MobileSkillsSection extends StatelessWidget {
-  const MobileSkillsSection({super.key});
+  const MobileSkillsSection({super.key, required this.inHome});
+
+  final bool inHome;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       spacing: 16,
       children: [
-        HashHeadSection(
-          text: 'skills',
-          flex: 1,
-        ),
+        if (inHome)
+          HashHeadSection(
+            text: 'skills',
+            flex: 1,
+          ),
         FutureBuilder(
             future: loadSkills(),
             builder: (context, snapshot) {
@@ -42,13 +45,14 @@ class MobileSkillsSection extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Image.asset(
-                      Assets.skillsImage,
-                      height: 300,
+                  if (inHome)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Image.asset(
+                        Assets.skillsImage,
+                        height: 300,
+                      ),
                     ),
-                  ),
                 ],
               );
             }),

@@ -4,15 +4,17 @@ class Assets {
   static const String myFunFacts = 'assets/images/myFunFacts.png';
   static const String profileImage = 'assets/images/profileImage.png';
   static const String skillsImage = 'assets/images/skillsImage.png';
-  static const String chertNodes = 'assets/images/chertNodes.png';
-  static const String protectX = 'assets/images/protectX.png';
-  static const String kahoot = 'assets/images/kahoot.png';
+  static const String mudawi = 'assets/images/mudawi.png';
+  static const String ceo = 'assets/images/ceo.png';
+  static const String ceoBuffet = 'assets/images/ceoBuffet.png';
 
   //icons
   static const String logo = 'assets/icons/essamLogo.png';
   static const String dots = 'assets/icons/dots.png';
   static const String github = 'assets/icons/github.png';
-  static const String hash = 'assets/icons/hash.png';
   static const String rectangle = 'assets/icons/rectangle.png';
   static const String linkedin = 'assets/icons/linkedin.png';
+  static const String facebook = 'assets/icons/facebook.png';
+  static const String instagram = 'assets/icons/instagram.png';
+  static const String whatsapp = 'assets/icons/whatsapp.png';
 }

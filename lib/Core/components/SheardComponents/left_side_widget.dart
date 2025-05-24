@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/res/assets.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../constants/colors.dart';
+import '../../constants/url_launcher.dart';
+import '../CustomWidgets/icon_link.dart';
 
 class LeftSideWidget extends StatelessWidget {
   const LeftSideWidget({
@@ -16,41 +17,22 @@ class LeftSideWidget extends StatelessWidget {
       child: Column(
         children: [
           Column(
-            spacing: 4,
+            spacing: 8,
             children: [
               Container(
                 height: 100,
                 width: 2,
                 color: grayColor,
               ),
-              InkWell(
-                onTap: () async {
-                  final Uri _url = Uri.parse('https://github.com/muhamaadessam');
-
-                  if (!await launchUrl(_url)) {
-                    throw Exception('Could not launch $_url');
-                  }
-                },
-                child: Image.asset(
-                  Assets.github,
-                  width: 32,
-                  semanticLabel: 'github',
-                ),
+              IconLink(
+                name: 'github',
+                icon: Assets.github,
+                url: Links.github,
               ),
-              InkWell(
-                onTap: () async {
-                  final Uri _url = Uri.parse('https://www.linkedin.com/in/muhammadessam159');
-
-                  if (!await launchUrl(_url)) {
-                    throw Exception('Could not launch $_url');
-                  }
-                },
-                child: Image.asset(
-                  Assets.linkedin,
-                  width: 24,
-                  color: grayColor,
-                  semanticLabel: 'linkedin',
-                ),
+              IconLink(
+                name: 'linkedin',
+                icon: Assets.linkedin,
+                url: Links.linkedIn,
               ),
             ],
           ),

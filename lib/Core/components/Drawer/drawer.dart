@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../res/assets.dart';
+import '../../../routes/routes.dart';
 import 'custom_list_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -8,7 +10,8 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      surfaceTintColor: Colors.white,
+      // backgroundColor: ,
+      // surfaceTintColor: Colors.white,
       width: MediaQuery.sizeOf(context).width * .85,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -22,7 +25,7 @@ class CustomDrawer extends StatelessWidget {
           ),
           Center(
               child: Image.asset(
-            'assets/png/logo1.png',
+            Assets.logo,
             width: 112,
           )),
           const SizedBox(
@@ -45,51 +48,27 @@ class CustomDrawer extends StatelessWidget {
 
 List<Widget> drawerList(context) => [
       CustomListTile(
-        icon: 'profile',
-        title: 'profile',
+        title: 'home',
         onTap: () {
-          // Navigator.push(context,
-          //     MaterialPageRoute(builder: (context) => const ProfileScreen()));
-        },
-      ),
-      // const CustomListTile(
-      //   icon: 'language',
-      //   title: 'language',
-      //   trailing: LanguageDropDownButton(),
-      // ),
-      CustomListTile(
-        icon: 'setting',
-        title: 'settings',
-        onTap: () {
-          // Navigator.push(
-          //     context,
-          //     MaterialPageRoute(
-          //         builder: (context) => const SettingsScreen()));
+          context.go(Routes.homeScreen);
         },
       ),
       CustomListTile(
-        icon: 'support-service',
-        title: 'technicalSupport',
+        title: 'works',
         onTap: () {
-          // ChatCubit.get(context).getChat();
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => const TechnicalSupportScreen(
-          //     ),
-          //   ),
-          // );
+          context.go(Routes.worksScreen);
         },
       ),
       CustomListTile(
-        icon: 'logout',
-        title: 'logout',
+        title: 'about-me',
         onTap: () {
-          // Navigator.pushAndRemoveUntil(
-          //     context,
-          //     MaterialPageRoute(builder: (context) => const LoginScreen()),
-          //     (route) => false);
-          // CacheHelper.put(key: 'logged', value: false);
+          context.go(Routes.aboutMeScreen);
+        },
+      ),
+      CustomListTile(
+        title: 'contacts',
+        onTap: () {
+          context.go(Routes.contactsScreen);
         },
       ),
     ];

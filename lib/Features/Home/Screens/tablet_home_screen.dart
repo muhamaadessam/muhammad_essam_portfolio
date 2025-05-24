@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:muhammad_essam_portfolio/Features/AbouMe/tablet_about_me_section.dart';
+import 'package:muhammad_essam_portfolio/Features/AbouMe/Components/HomeSections/tablet_about_me_section.dart';
 
-import '../../AppBar/tablet_app_bar.dart';
-import '../../Contacts/tablet_contacts_section.dart';
+import '../../../routes/routes.dart';
+import '../../AppBar/custom_app_bar.dart';
+import '../../Contacts/HomeSections/tablet_contacts_section.dart';
 import '../../Footer/tablet_footer_section.dart';
 import '../../Profile/Screens/web_profile_section.dart';
 import '../../Projects/Presentation/Screens/projects_section.dart';
@@ -23,12 +24,20 @@ class TabletHomeScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min, // Important for scroll views
                 spacing: 64,
                 children: [
-                  TabletAppBar(),
+                  CustomAppBar(
+                    currentRoute: Routes.homeScreen,
+                  ),
                   WebProfileSection(),
-                  ProjectsSection(),
-                  TabletSkillsSection(),
-                  TabletAboutMeSection(),
-                  TabletContactsSection(),
+                  ProjectsSection(inHome: true),
+                  TabletSkillsSection(
+                    inHome: true,
+                  ),
+                  TabletAboutMeSection(
+                    inHome: true,
+                  ),
+                  TabletContactsSection(
+                    inHome: true,
+                  ),
                 ],
               ),
             ),

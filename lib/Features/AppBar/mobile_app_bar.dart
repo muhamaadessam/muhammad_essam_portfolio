@@ -18,7 +18,9 @@ class MobileAppBar extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
             icon: Icon(
               Icons.menu,
               color: grayColor,
