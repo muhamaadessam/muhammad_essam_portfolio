@@ -12,9 +12,10 @@ class ProfileImagesSection extends StatelessWidget {
       children: [
         Image.asset(
           Assets.profileImage,
-          height: 380,
+          width: 400,
         ),
         Container(
+        width: 380,
           decoration: BoxDecoration(
             border: Border.all(
               color: grayColor,

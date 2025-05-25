@@ -1,6 +1,6 @@
 class Assets {
   //images
-  static const String aboutMeImage = 'assets/images/aboutMeImage.png';
+  // static const String aboutMeImage = 'assets/images/aboutMeImage.png';
   static const String myFunFacts = 'assets/images/myFunFacts.png';
   static const String profileImage = 'assets/images/profileImage.png';
   static const String skillsImage = 'assets/images/skillsImage.png';

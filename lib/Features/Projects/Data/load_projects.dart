@@ -7,7 +7,6 @@ Future<List<ProjectsModel>> loadProjects() async {
   final String response =
       await rootBundle.loadString('assets/json/projects.json');
   final data = await json.decode(response);
-  print(data);
   return data
       .map<ProjectsModel>((json) => ProjectsModel.fromJson(json))
       .toList();

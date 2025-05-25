@@ -40,7 +40,7 @@ class CustomAppBar extends StatelessWidget {
               ),
               InkWell(
                 child: TextWithHash(
-                  text: 'works',
+                  text: 'projects',
                   color: currentRoute == Routes.worksScreen
                       ? Colors.white
                       : grayColor,
@@ -77,70 +77,6 @@ class CustomAppBar extends StatelessWidget {
             ],
           )
           // ActionsAppBar(),
-        ],
-      ),
-    );
-  }
-}
-
-class ActionsAppBar extends StatefulWidget {
-  const ActionsAppBar({super.key});
-
-  @override
-  State<ActionsAppBar> createState() => _ActionsAppBarState();
-}
-
-class _ActionsAppBarState extends State<ActionsAppBar> {
-  @override
-  Widget build(BuildContext context) {
-    return AppResponsive(
-      mobile: IconButton(
-        onPressed: () {},
-        icon: Icon(
-          Icons.menu,
-          color: grayColor,
-        ),
-      ),
-      tablet: Row(
-        spacing: 20,
-        children: [
-          // InkWell(
-          //   child: TextWithHash(text: 'home'),
-          //   onTap: () {},
-          // ),
-          InkWell(
-            child: TextWithHash(text: 'works'),
-            onTap: () {},
-          ),
-          InkWell(
-            child: TextWithHash(text: 'about-me'),
-            onTap: () {},
-          ),
-          InkWell(
-            child: TextWithHash(text: 'contacts'),
-            onTap: () {},
-          ),
-        ],
-      ),
-      desktop: Row(
-        spacing: 20,
-        children: [
-          InkWell(
-            child: TextWithHash(text: 'home'),
-            onTap: () {},
-          ),
-          InkWell(
-            child: TextWithHash(text: 'works'),
-            onTap: () {},
-          ),
-          InkWell(
-            child: TextWithHash(text: 'about-me'),
-            onTap: () {},
-          ),
-          InkWell(
-            child: TextWithHash(text: 'contacts'),
-            onTap: () {},
-          ),
         ],
       ),
     );

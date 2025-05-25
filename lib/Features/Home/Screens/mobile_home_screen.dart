@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../Core/components/Drawer/drawer.dart';
+import '../../../routes/routes.dart';
 import '../../AbouMe/Components/HomeSections/mobile_about_me_section.dart';
 import '../../AppBar/mobile_app_bar.dart';
 import '../../Contacts/HomeSections/mobile_contacts_section.dart';
@@ -25,7 +26,7 @@ class MobileHomeScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min, // Important for scroll views
                 spacing: 32,
                 children: [
-                  MobileAppBar(),
+                  MobileAppBar(currentRoute: Routes.homeScreen,),
                   MobileProfileSection(),
                   ProjectsSection(inHome: true),
                   MobileSkillsSection(

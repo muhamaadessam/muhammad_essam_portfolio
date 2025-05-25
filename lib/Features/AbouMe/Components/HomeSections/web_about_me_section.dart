@@ -33,7 +33,7 @@ class WebAboutMeSection extends StatelessWidget {
               child: AboutMeTextSection(),
             ),
             Image.asset(
-              Assets.aboutMeImage,
+              Assets.skillsImage,
               height: 400,
             ),
           ],

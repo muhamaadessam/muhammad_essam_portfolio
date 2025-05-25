@@ -3,7 +3,6 @@ abstract class Routes {
 
   static const String homeScreen = '/';
   static const String aboutMeScreen = '/about-me';
-  static const String worksScreen = '/works';
+  static const String worksScreen = '/projects';
   static const String contactsScreen = '/contacts';
-// static const String AboutMeScreen = '/about-me';
 }

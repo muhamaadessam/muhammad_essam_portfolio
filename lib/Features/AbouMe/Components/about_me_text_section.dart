@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/box_widget.dart';
-import 'package:muhammad_essam_portfolio/Features/AbouMe/Components/cv_download_button.dart';
+import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/cv_download_button.dart';
 
 import '../../../Core/constants/colors.dart';
 import '../../../Core/constants/text.dart';

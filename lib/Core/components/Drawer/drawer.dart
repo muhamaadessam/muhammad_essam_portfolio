@@ -10,9 +10,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      // backgroundColor: ,
-      // surfaceTintColor: Colors.white,
-      width: MediaQuery.sizeOf(context).width * .85,
+      width: MediaQuery.sizeOf(context).width * .7,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,22 +22,27 @@ class CustomDrawer extends StatelessWidget {
             height: 32,
           ),
           Center(
-              child: Image.asset(
-            Assets.logo,
-            width: 112,
-          )),
+            child: Image.asset(
+              Assets.logo,
+              width: 112,
+            ),
+          ),
           const SizedBox(
             height: 52,
           ),
-          Expanded(
-            child: ListView.separated(
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              itemBuilder: (context, index) => drawerList(context)[index],
-              itemCount: drawerList(context).length,
-              physics: const NeverScrollableScrollPhysics(),
-              separatorBuilder: (context, index) => const SizedBox(height: 16),
-            ),
+          ...List.generate(
+            drawerList(context).length,
+            (index) => drawerList(context)[index],
           ),
+          // Expanded(
+          //   child: ListView.separated(
+          //     padding: const EdgeInsets.symmetric(vertical: 16),
+          //     itemBuilder: (context, index) => drawerList(context)[index],
+          //     itemCount: drawerList(context).length,
+          //     physics: const NeverScrollableScrollPhysics(),
+          //     separatorBuilder: (context, index) => const SizedBox(height: 16),
+          //   ),
+          // ),
         ],
       ),
     );
@@ -54,7 +57,7 @@ List<Widget> drawerList(context) => [
         },
       ),
       CustomListTile(
-        title: 'works',
+        title: 'projects',
         onTap: () {
           context.go(Routes.worksScreen);
         },

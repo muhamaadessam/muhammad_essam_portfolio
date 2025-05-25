@@ -31,7 +31,7 @@ class MobileAboutMeSection extends StatelessWidget {
           children: [
             AboutMeTextSection(),
             Image.asset(
-              Assets.aboutMeImage,
+              Assets.skillsImage,
               height: 300,
             ),
           ],

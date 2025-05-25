@@ -15,6 +15,8 @@ class LeftSideWidget extends StatelessWidget {
     return SizedBox(
       width: 100,
       child: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(
             spacing: 8,
@@ -41,14 +43,14 @@ class LeftSideWidget extends StatelessWidget {
           ),
           Image.asset(
             Assets.dots,
-            height: 100,
+            width: 80,
           ),
           Spacer(
             flex: 3,
           ),
           Image.asset(
             Assets.rectangle,
-            height: 100,
+            width: 80,
           ),
           Spacer(
             flex: 1,

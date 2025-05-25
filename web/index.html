@@ -17,26 +17,7 @@
 
     <!--  <base href="/">-->
     <base href="$FLUTTER_BASE_HREF">
-    <script>
-        document.addEventListener('DOMContentLoaded', () {
-          // Handle redirect before Flutter loads
-          const urlParams = new URLSearchParams(window.location.search);
-          const redirectParam = urlParams.get('redirect');
 
-          if (redirectParam) {
-            const decodedPath = decodeURIComponent(redirectParam);
-            // Clean URL before Flutter initializes
-            window.history.replaceState({}, '', decodedPath);
-          }
-
-          // Initialize Flutter after URL cleanup
-          setTimeout(() => {
-            const script = document.createElement('script');
-            script.src = 'flutter_bootstrap.js';
-            document.body.appendChild(script);
-          }, 50);
-        });
-    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/url-polyfill@1.1.12/url-polyfill.min.js"></script>
     <meta charset="UTF-8">
@@ -59,18 +40,24 @@
 <body>
 <script async src="flutter_bootstrap.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', () {
-      // Handle production redirects
-      const redirectPath = sessionStorage.getItem('redirect_path');
-      if (redirectPath) {
-        window.history.replaceState({}, '', redirectPath);
-        sessionStorage.removeItem('redirect_path');
+    document.addEventListener('DOMContentLoaded', () =>{
+      // Handle redirect before Flutter loads
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirectParam = urlParams.get('redirect');
+
+      if (redirectParam) {
+      console.log(redirectParam);
+<!--            const decodedPath = decodeURIComponent(redirectParam);-->
+<!--            // Clean URL before Flutter initializes-->
+<!--            window.history.replaceState({}, '', decodedPath);-->
       }
 
       // Initialize Flutter after URL cleanup
-      const script = document.createElement('script');
-      script.src = 'flutter_bootstrap.js';
-      document.body.appendChild(script);
+<!--          setTimeout(() => {-->
+<!--            const script = document.createElement('script');-->
+<!--            script.src = 'flutter_bootstrap.js';-->
+<!--            document.body.appendChild(script);-->
+<!--          }, 50);-->
     });
 </script>
 </body>

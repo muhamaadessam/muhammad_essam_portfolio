@@ -4,9 +4,9 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-import '../../../Core/components/SheardComponents/box_widget.dart';
-import '../../../Core/constants/colors.dart';
-import '../../../Core/constants/text.dart';
+import 'box_widget.dart';
+import '../../constants/colors.dart';
+import '../../constants/text.dart';
 
 class CvDownloadButton extends StatelessWidget {
   const CvDownloadButton({
