@@ -33,7 +33,7 @@ class TabletAboutMeSection extends StatelessWidget {
               child: AboutMeTextSection(),
             ),
             Image.asset(
-              Assets.skillsImage,
+              Assets.aboutMeImage,
               height: 400,
             ),
           ],

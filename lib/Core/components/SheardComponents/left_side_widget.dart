@@ -18,43 +18,49 @@ class LeftSideWidget extends StatelessWidget {
         // mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Column(
-            spacing: 8,
-            children: [
-              Container(
-                height: 100,
-                width: 2,
-                color: grayColor,
-              ),
-              IconLink(
-                name: 'github',
-                icon: Assets.github,
-                url: Links.github,
-              ),
-              IconLink(
-                name: 'linkedin',
-                icon: Assets.linkedin,
-                url: Links.linkedIn,
-              ),
-            ],
+          Center(
+            child: Column(
+              spacing: 8,
+              children: [
+                Container(
+                  height: 100,
+                  width: 2,
+                  color: grayColor,
+                ),
+                IconLink(
+                  name: 'github',
+                  icon: Assets.github,
+                  url: Links.github,
+                ),
+                IconLink(
+                  name: 'linkedin',
+                  icon: Assets.linkedin,
+                  url: Links.linkedIn,
+                ),
+              ],
+            ),
           ),
-          Spacer(
-            flex: 1,
-          ),
+          Spacer(flex: 1),
           Image.asset(
             Assets.dots,
-            width: 80,
+            width: 70,
           ),
-          Spacer(
-            flex: 3,
-          ),
+          Spacer(flex: 2),
           Image.asset(
             Assets.rectangle,
-            width: 80,
+            width: 50,
           ),
-          Spacer(
-            flex: 1,
+          Spacer(flex: 1),
+          Image.asset(
+            Assets.dots,
+            width: 50,
           ),
+          Spacer(flex: 2),
+          Image.asset(
+            Assets.rectangle,
+            width: 70,
+          ),
+          Spacer(flex: 1),
         ],
       ),
     );

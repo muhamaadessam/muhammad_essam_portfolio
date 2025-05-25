@@ -23,20 +23,17 @@ class WebScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IntrinsicHeight(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 50),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const LeftSideWidget(),
-                          Expanded(
-                              child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 50),
-                            child: child,
-                          )),
-                          const RightSideWidget(),
-                        ],
-                      ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const LeftSideWidget(),
+                        Expanded(
+                            child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 50),
+                          child: child,
+                        )),
+                        const RightSideWidget(),
+                      ],
                     ),
                   ),
                   SizedBox(

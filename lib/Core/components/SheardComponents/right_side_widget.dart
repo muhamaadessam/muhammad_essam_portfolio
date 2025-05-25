@@ -12,31 +12,29 @@ class RightSideWidget extends StatelessWidget {
     return SizedBox(
       width: 100,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Spacer(
-            flex: 1,
+          Spacer(flex: 1),
+          Image.asset(
+            Assets.rightRectangle,
+            width: 50,
           ),
+          Spacer(flex: 1),
           Image.asset(
             Assets.dots,
-            height: 100,
+            width: 70,
           ),
-          Spacer(
-            flex: 3,
-          ),
+          Spacer(flex: 1),
           Image.asset(
-            Assets.rectangle,
-            height: 100,
+            Assets.rightRectangle,
+            width: 70,
           ),
-          Spacer(
-            flex: 1,
-          ),
+          Spacer(flex: 1),
           Image.asset(
             Assets.dots,
-            height: 100,
+            width: 50,
           ),
-          Spacer(
-            flex: 3,
-          ),
+          Spacer(flex: 1),
         ],
       ),
     );

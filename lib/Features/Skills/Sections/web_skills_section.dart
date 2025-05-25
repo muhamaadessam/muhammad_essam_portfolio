@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/Features/Skills/skill_card.dart';
-import 'package:muhammad_essam_portfolio/res/assets.dart';
 
 import '../../../Core/components/SheardComponents/hash_head_section.dart';
 import '../Data/load_skills.dart';
@@ -34,14 +33,14 @@ class WebSkillsSection extends StatelessWidget {
               return Row(
                 spacing: 64,
                 children: [
-                  if (inHome)
-                    Expanded(
-                      flex: 2,
-                      child: Image.asset(
-                        Assets.skillsImage,
-                        width: double.infinity,
-                      ),
-                    ),
+                  // if (inHome)
+                  //   Expanded(
+                  //     flex: 1,
+                  //     child: Image.asset(
+                  //       Assets.skillsImage,
+                  //       width: double.infinity,
+                  //     ),
+                  //   ),
                   Expanded(
                     flex: 3,
                     child: Wrap(
