@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:muhammad_essam_portfolio/Features/AbouMe/about_me_screen.dart';
 import 'package:muhammad_essam_portfolio/routes/routes.dart';
 
-import '../Core/components/not_found_screen.dart';
-import '../Features/Contacts/contacts_screen.dart';
+import '../Core/components/SheardComponents/not_found_screen.dart';
+import '../Features/AboutMe/presentation/screens/about_me_screen.dart';
+import '../Features/Contacts/Presentation/Screens/contacts_screen.dart';
 import '../Features/Home/Screens/home_screen.dart';
 import '../Features/Projects/Presentation/Screens/projects_screen.dart';
 import '../main.dart';

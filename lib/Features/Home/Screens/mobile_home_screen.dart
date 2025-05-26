@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../Core/components/Drawer/drawer.dart';
 import '../../../routes/routes.dart';
-import '../../AbouMe/Components/HomeSections/mobile_about_me_section.dart';
+import '../../AboutMe/presentation/Components/HomeSections/mobile_about_me_section.dart';
 import '../../AppBar/mobile_app_bar.dart';
-import '../../Contacts/HomeSections/mobile_contacts_section.dart';
+import '../../Contacts/Presentation/Components/HomeSections/mobile_contacts_section.dart';
 import '../../Footer/mobile_footer_section.dart';
-import '../../Profile/Screens/tablet_profile_section.dart';
+import '../../Profile/Presentation/Screens/tablet_profile_section.dart';
 import '../../Projects/Presentation/Screens/projects_section.dart';
-import '../../Skills/Sections/mobile_skills_section.dart';
+import '../../Skills/Presentation/Components/Sections/mobile_skills_section.dart';
 
 class MobileHomeScreen extends StatelessWidget {
   const MobileHomeScreen({super.key});
