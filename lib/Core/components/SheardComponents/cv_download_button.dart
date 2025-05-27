@@ -7,11 +7,19 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'box_widget.dart';
 import '../../constants/colors.dart';
 import '../../constants/text.dart';
+import 'hover_effect_widget.dart';
 
-class CvDownloadButton extends StatelessWidget {
+class CvDownloadButton extends StatefulWidget {
   const CvDownloadButton({
     super.key,
   });
+
+  @override
+  State<CvDownloadButton> createState() => _CvDownloadButtonState();
+}
+
+class _CvDownloadButtonState extends State<CvDownloadButton> {
+  bool _isHovering = false;
 
   @override
   Widget build(BuildContext context) {
@@ -32,18 +40,19 @@ class CvDownloadButton extends StatelessWidget {
       html.Url.revokeObjectUrl(url);
     }
 
-    return InkWell(
-      onTap: () {
-        downloadPdfFromAssets(
-            'assets/pdfs/Muhammad Essam.pdf', 'Muhammad Essam.pdf');
-      },
+    return HoverEffectWidget(
       child: BoxWidget(
+        isHovering: _isHovering,
         child: TextBody16(
           'Download CV',
           color: Colors.white,
         ),
         color: mainColor,
       ),
+      onTap: () {
+        downloadPdfFromAssets(
+            'assets/pdfs/Muhammad Essam.pdf', 'Muhammad Essam.pdf');
+      },
     );
   }
 }

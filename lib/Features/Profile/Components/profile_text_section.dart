@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/box_widget.dart';
+import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/hover_effect_widget.dart';
 
 import '../../../Core/components/SheardComponents/cv_download_button.dart';
 import '../../../Core/constants/colors.dart';
@@ -48,10 +49,7 @@ class ProfileTextSection extends StatelessWidget {
         Row(
           spacing: 32,
           children: [
-            InkWell(
-              onTap: () {
-                context.go(Routes.contactsScreen);
-              },
+            HoverEffectWidget(
               child: BoxWidget(
                 child: TextBody16(
                   'Contact me!!',
@@ -59,6 +57,9 @@ class ProfileTextSection extends StatelessWidget {
                 ),
                 color: mainColor,
               ),
+              onTap: () {
+                context.go(Routes.contactsScreen);
+              },
             ),
             CvDownloadButton(),
           ],

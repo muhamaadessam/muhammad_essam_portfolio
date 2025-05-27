@@ -3,6 +3,8 @@ import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/text_w
 
 import '../../constants/colors.dart';
 import '../../constants/text.dart';
+import 'hover_effect_text.dart';
+import 'hover_effect_widget.dart';
 
 class HashHeadSection extends StatelessWidget {
   const HashHeadSection({
@@ -37,12 +39,10 @@ class HashHeadSection extends StatelessWidget {
           flex: 3,
         ),
         if (isViewAll)
-          InkWell(
-            onTap: onTap,
-            child: TextBody16(
-              'View all ~~>',
-              color: Colors.white,
-            ),
+          HoverEffectText(
+            onTap: onTap!,
+            text: 'View all ~~>',
+            color: Colors.white,
           ),
       ],
     );

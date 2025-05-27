@@ -36,21 +36,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        // BlocProvider(create: (context) => ServicesLocator().get<ThemeCubit>()),
-      ],
-      child: MaterialApp.router(
-        routerConfig: AppPages.router,
-        title: 'Muhammad Essam',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: mainColor),
-          scaffoldBackgroundColor: backgroundColor,
-          drawerTheme: const DrawerThemeData(
-            backgroundColor: backgroundColor,
-          ),
-          useMaterial3: true,
+    return MaterialApp.router(
+      routerConfig: AppPages.router,
+      title: 'Muhammad Essam',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: mainColor),
+        scaffoldBackgroundColor: backgroundColor,
+        drawerTheme: const DrawerThemeData(
+          backgroundColor: backgroundColor,
         ),
+        useMaterial3: true,
       ),
     );
   }
