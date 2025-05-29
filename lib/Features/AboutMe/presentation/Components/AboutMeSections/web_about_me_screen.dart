@@ -14,14 +14,16 @@ class WebAboutMeScreen extends StatelessWidget {
     return WebScreen(
       child: Column(
         mainAxisSize: MainAxisSize.min, // Important for scroll views
-        spacing: 96,
         children: [
+          SizedBox(height: 32,),
           CustomAppBar(
             currentRoute: Routes.aboutMeScreen,
           ),
+          SizedBox(height: 96,),
           WebAboutMeSection(
             inHome: false,
           ),
+          SizedBox(height: 96,),
           WebSkillsSection(
             inHome: false,
           ),

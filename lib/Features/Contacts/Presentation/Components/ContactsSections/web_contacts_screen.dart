@@ -13,11 +13,12 @@ class WebContactsScreen extends StatelessWidget {
     return WebScreen(
       child: Column(
         mainAxisSize: MainAxisSize.min, // Important for scroll views
-        spacing: 96,
         children: [
+          SizedBox(height: 32,),
           CustomAppBar(
             currentRoute: Routes.contactsScreen,
           ),
+          SizedBox(height: 96,),
           WebContactsSection(
             inHome: false,
           ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:muhammad_essam_portfolio/Core/components/app_responsive.dart';
 import 'package:muhammad_essam_portfolio/Core/constants/colors.dart';
 
 import '../../Core/components/SheardComponents/text_with_hash.dart';
@@ -18,9 +17,15 @@ class CustomAppBar extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Row(
         children: [
-          Image.asset(
-            Assets.logo,
-            width: 70,
+          InkWell(
+            onTap: () {
+              if (currentRoute != Routes.homeScreen)
+                context.go(Routes.homeScreen);
+            },
+            child: Image.asset(
+              Assets.essamLogoWithText,
+              height: 40,
+            ),
           ),
           const Spacer(),
           Row(

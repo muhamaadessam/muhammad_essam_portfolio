@@ -17,8 +17,8 @@ class NotFoundScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              Assets.logo,
-              height: 100,
+              Assets.essamLogoWithText,
+              width: 225,
             ),
             const SizedBox(
               height: 32,

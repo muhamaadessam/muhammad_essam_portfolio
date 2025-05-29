@@ -13,16 +13,15 @@ class WebProjectsScreen extends StatelessWidget {
     return WebScreen(
       child: Column(
         mainAxisSize: MainAxisSize.min, // Important for scroll views
-        spacing: 96,
         children: [
+          SizedBox(height: 32,),
           CustomAppBar(
             currentRoute: Routes.worksScreen,
           ),
+          SizedBox(height: 96,),
           ProjectsSection(
             inHome: false,
           ),
-          // WebAboutMeSection(inHome: false,),
-          // WebSkillsSection(inHome: false,),
         ],
       ),
     );

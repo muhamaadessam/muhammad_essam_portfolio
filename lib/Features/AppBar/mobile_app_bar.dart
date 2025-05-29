@@ -44,8 +44,8 @@ class _MobileAppBarState extends State<MobileAppBar>
         Row(
           children: [
             Image.asset(
-              Assets.logo,
-              width: 70,
+              Assets.essamLogoWithText,
+              height: 40,
             ),
             const Spacer(),
             IconButton(

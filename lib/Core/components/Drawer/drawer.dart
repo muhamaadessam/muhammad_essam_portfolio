@@ -23,8 +23,8 @@ class CustomDrawer extends StatelessWidget {
           ),
           Center(
             child: Image.asset(
-              Assets.logo,
-              width: 112,
+              Assets.essamLogoWithText,
+              height: 50,
             ),
           ),
           const SizedBox(

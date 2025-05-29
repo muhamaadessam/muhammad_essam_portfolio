@@ -17,19 +17,24 @@ class WebHomeScreen extends StatelessWidget {
     return WebScreen(
       child: Column(
         mainAxisSize: MainAxisSize.min, // Important for scroll views
-        spacing: 96,
         children: [
+          SizedBox(height: 32,),
           CustomAppBar(
             currentRoute: Routes.homeScreen,
           ),
+          SizedBox(height: 96,),
           WebProfileSection(),
+          SizedBox(height: 96,),
           ProjectsSection(inHome: true),
+          SizedBox(height: 96,),
           WebSkillsSection(
             inHome: true,
           ),
+          SizedBox(height: 96,),
           WebAboutMeSection(
             inHome: true,
           ),
+          SizedBox(height: 96,),
           WebContactsSection(
             inHome: true,
           ),

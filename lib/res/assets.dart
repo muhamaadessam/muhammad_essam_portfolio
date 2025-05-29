@@ -9,7 +9,6 @@ class Assets {
   static const String ceoBuffet = 'assets/images/ceoBuffet.png';
 
   //icons
-  static const String logo = 'assets/icons/essamLogo.png';
   static const String dots = 'assets/icons/dots.png';
   static const String github = 'assets/icons/github.png';
   static const String rectangle = 'assets/icons/rectangle.png';
@@ -18,4 +17,9 @@ class Assets {
   static const String facebook = 'assets/icons/facebook.png';
   static const String instagram = 'assets/icons/instagram.png';
   static const String whatsapp = 'assets/icons/whatsapp.png';
+
+  //logos
+  static const String logo = 'assets/logos/essamLogo.png';
+  static const String essamLogoWithText = 'assets/logos/essamLogoWithText.png';
+
 }
