@@ -18,6 +18,8 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         children: [
           InkWell(
+            highlightColor: Colors.transparent,
+            splashColor: Colors.transparent,
             onTap: () {
               if (currentRoute != Routes.homeScreen)
                 context.go(Routes.homeScreen);

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/box_widget.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/cv_download_button.dart';
+import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/hover_effect_widget.dart';
 
 import '../../../../Core/constants/colors.dart';
 import '../../../../Core/constants/text.dart';
@@ -31,10 +32,7 @@ class AboutMeTextSection extends StatelessWidget {
         Row(
           spacing: 32,
           children: [
-            InkWell(
-              onTap: () {
-                context.go(Routes.aboutMeScreen);
-              },
+            HoverEffectWidget(
               child: BoxWidget(
                 child: TextBody16(
                   'Read more ->',
@@ -42,6 +40,9 @@ class AboutMeTextSection extends StatelessWidget {
                 ),
                 color: mainColor,
               ),
+              onTap: () {
+                context.go(Routes.aboutMeScreen);
+              },
             ),
             CvDownloadButton(),
           ],
