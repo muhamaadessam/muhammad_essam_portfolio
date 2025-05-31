@@ -1,10 +1,9 @@
-class SkillModel {
-  final String title;
-  final List<String> skills;
+import '../../Domain/Entities/skill_entity.dart';
 
-  SkillModel({
-    required this.title,
-    required this.skills,
+class SkillModel extends SkillEntity {
+  const SkillModel({
+    required super.title,
+    required super.skills,
   });
 
   factory SkillModel.fromJson(Map<String, dynamic> json) {

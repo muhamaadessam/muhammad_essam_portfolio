@@ -5,7 +5,7 @@ import '../../AboutMe/presentation/Components/HomeSections/tablet_about_me_secti
 import '../../AppBar/custom_app_bar.dart';
 import '../../Contacts/Presentation/Components/HomeSections/tablet_contacts_section.dart';
 import '../../Footer/tablet_footer_section.dart';
-import '../../Profile/Presentation/Screens/web_profile_section.dart';
+import '../../Profile/Presentation/Components/ProfileHomeSections/web_profile_section.dart';
 import '../../Projects/Presentation/Screens/projects_section.dart';
 import '../../Skills/Presentation/Components/Sections/tablet_skills_section.dart';
 

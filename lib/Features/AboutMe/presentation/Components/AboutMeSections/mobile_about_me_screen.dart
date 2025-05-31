@@ -6,6 +6,7 @@ import '../../../../AppBar/mobile_app_bar.dart';
 import '../../../../Footer/mobile_footer_section.dart';
 import '../../../../Skills/Presentation/Components/Sections/mobile_skills_section.dart';
 import '../HomeSections/mobile_about_me_section.dart';
+import '../MyFunFactsSections/mobile_fun_fact_section.dart';
 
 class MobileAboutMeScreen extends StatelessWidget {
   const MobileAboutMeScreen({super.key});
@@ -32,6 +33,7 @@ class MobileAboutMeScreen extends StatelessWidget {
                   MobileSkillsSection(
                     inHome: false,
                   ),
+                  MobileFunFactSection(),
                 ],
               ),
             ),

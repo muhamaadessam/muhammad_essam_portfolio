@@ -6,7 +6,7 @@ import '../../AboutMe/presentation/Components/HomeSections/mobile_about_me_secti
 import '../../AppBar/mobile_app_bar.dart';
 import '../../Contacts/Presentation/Components/HomeSections/mobile_contacts_section.dart';
 import '../../Footer/mobile_footer_section.dart';
-import '../../Profile/Presentation/Screens/tablet_profile_section.dart';
+import '../../Profile/Presentation/Components/ProfileHomeSections/tablet_profile_section.dart';
 import '../../Projects/Presentation/Screens/projects_section.dart';
 import '../../Skills/Presentation/Components/Sections/mobile_skills_section.dart';
 
@@ -26,7 +26,9 @@ class MobileHomeScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min, // Important for scroll views
                 spacing: 32,
                 children: [
-                  MobileAppBar(currentRoute: Routes.homeScreen,),
+                  MobileAppBar(
+                    currentRoute: Routes.homeScreen,
+                  ),
                   MobileProfileSection(),
                   ProjectsSection(inHome: true),
                   MobileSkillsSection(

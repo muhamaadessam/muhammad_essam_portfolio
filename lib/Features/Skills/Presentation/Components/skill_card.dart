@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muhammad_essam_portfolio/Features/Skills/Data/skill_model.dart';
+import 'package:muhammad_essam_portfolio/Features/Skills/Domain/Entities/skill_entity.dart';
 
 import '../../../../Core/constants/colors.dart';
 import '../../../../Core/constants/text.dart';
@@ -10,7 +10,7 @@ class SkillCard extends StatelessWidget {
     required this.skill,
   });
 
-  final SkillModel skill;
+  final SkillEntity skill;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class SkillCard extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
       ),
-      width: 250,
+      width: 270,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -42,7 +42,7 @@ class SkillCard extends StatelessWidget {
               children: List.generate(
                 skill.skills.length,
                 (index) => TextBody16(
-                  skill.skills[index],
+                  '* ${skill.skills[index]}',
                   color: grayColor,
                 ),
               ),

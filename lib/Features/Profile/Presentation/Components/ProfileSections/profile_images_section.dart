@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../Core/constants/colors.dart';
-import '../../../res/assets.dart';
+import '../../../../../Core/constants/colors.dart';
+import '../../../../../res/assets.dart';
 
 class ProfileImagesSection extends StatelessWidget {
   const ProfileImagesSection({super.key});
@@ -15,7 +15,7 @@ class ProfileImagesSection extends StatelessWidget {
           width: 400,
         ),
         Container(
-        width: 380,
+          width: 380,
           decoration: BoxDecoration(
             border: Border.all(
               color: grayColor,

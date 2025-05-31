@@ -3,10 +3,10 @@ import 'package:go_router/go_router.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/box_widget.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/hover_effect_widget.dart';
 
-import '../../../Core/components/SheardComponents/cv_download_button.dart';
-import '../../../Core/constants/colors.dart';
-import '../../../Core/constants/text.dart';
-import '../../../routes/routes.dart';
+import '../../../../../Core/components/SheardComponents/cv_download_button.dart';
+import '../../../../../Core/constants/colors.dart';
+import '../../../../../Core/constants/text.dart';
+import '../../../../../routes/routes.dart';
 
 class ProfileTextSection extends StatelessWidget {
   const ProfileTextSection({super.key});

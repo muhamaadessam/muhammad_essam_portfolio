@@ -22,7 +22,9 @@ class MobileProjectsScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min, // Important for scroll views
                 spacing: 32,
                 children: [
-                  MobileAppBar(currentRoute: Routes.worksScreen,),
+                  MobileAppBar(
+                    currentRoute: Routes.worksScreen,
+                  ),
                   ProjectsSection(
                     inHome: false,
                   ),

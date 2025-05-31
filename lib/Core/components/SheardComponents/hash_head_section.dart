@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/text_with_hash.dart';
 
 import '../../constants/colors.dart';
-import '../../constants/text.dart';
 import 'hover_effect_text.dart';
-import 'hover_effect_widget.dart';
 
 class HashHeadSection extends StatelessWidget {
   const HashHeadSection({

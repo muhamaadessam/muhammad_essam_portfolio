@@ -23,7 +23,9 @@ class MobileContactsScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min, // Important for scroll views
                   spacing: 32,
                   children: [
-                    MobileAppBar(currentRoute: Routes.contactsScreen,),
+                    MobileAppBar(
+                      currentRoute: Routes.contactsScreen,
+                    ),
                     MobileContactsSection(
                       inHome: false,
                     ),

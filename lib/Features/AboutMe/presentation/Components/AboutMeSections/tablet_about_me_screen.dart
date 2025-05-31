@@ -5,6 +5,7 @@ import '../../../../AppBar/custom_app_bar.dart';
 import '../../../../Footer/tablet_footer_section.dart';
 import '../../../../Skills/Presentation/Components/Sections/tablet_skills_section.dart';
 import '../HomeSections/tablet_about_me_section.dart';
+import '../MyFunFactsSections/tablet_fun_fact_section.dart';
 
 class TabletAboutMeScreen extends StatelessWidget {
   const TabletAboutMeScreen({super.key});
@@ -30,6 +31,7 @@ class TabletAboutMeScreen extends StatelessWidget {
                   TabletSkillsSection(
                     inHome: false,
                   ),
+                  TabletFunFactSection(),
                 ],
               ),
             ),

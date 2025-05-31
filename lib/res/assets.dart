@@ -7,6 +7,7 @@ class Assets {
   static const String mudawi = 'assets/images/mudawi.png';
   static const String ceo = 'assets/images/ceo.png';
   static const String ceoBuffet = 'assets/images/ceoBuffet.png';
+  static const String myFunFactsImage = 'assets/images/myFunFactsImage.png';
 
   //icons
   static const String dots = 'assets/icons/dots.png';
@@ -22,4 +23,9 @@ class Assets {
   static const String logo = 'assets/logos/essamLogo.png';
   static const String essamLogoWithText = 'assets/logos/essamLogoWithText.png';
 
+  //jsons
+  static const String aboutMeJson = 'assets/json/aboutMe.json';
+  static const String myFunFactsJson = 'assets/json/myFunFacts.json';
+  static const String skillsJson = 'assets/json/skills.json';
+  static const String projectsJson = 'assets/json/projects.json';
 }

@@ -69,65 +69,67 @@ class _MobileAppBarState extends State<MobileAppBar>
           ],
         ),
         // if (isDrawerOpen)
-          AnimatedSize(
-            duration: duration,
-            curve: Curves.easeInOut,
-            child:isDrawerOpen? Column(
-              spacing: 20,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                InkWell(
-                  child: TextWithHash(
-                    text: 'home',
-                    color: widget.currentRoute == Routes.homeScreen
-                        ? Colors.white
-                        : grayColor,
-                  ),
-                  onTap: () {
-                    if (widget.currentRoute != Routes.homeScreen)
-                      context.go(Routes.homeScreen);
-                  },
-                ),
-                InkWell(
-                  child: TextWithHash(
-                    text: 'projects',
-                    color: widget.currentRoute == Routes.worksScreen
-                        ? Colors.white
-                        : grayColor,
-                  ),
-                  onTap: () {
-                    if (widget.currentRoute != Routes.worksScreen)
-                      context.go(Routes.worksScreen);
-                  },
-                ),
-                InkWell(
-                  child: TextWithHash(
-                    text: 'about-me',
-                    color: widget.currentRoute == Routes.aboutMeScreen
-                        ? Colors.white
-                        : grayColor,
-                  ),
-                  onTap: () {
-                    if (widget.currentRoute != Routes.aboutMeScreen)
-                      context.go(Routes.aboutMeScreen);
-                  },
-                ),
-                InkWell(
-                  child: TextWithHash(
-                    text: 'contacts',
-                    color: widget.currentRoute == Routes.contactsScreen
-                        ? Colors.white
-                        : grayColor,
-                  ),
-                  onTap: () {
-                    if (widget.currentRoute != Routes.contactsScreen)
-                      context.go(Routes.contactsScreen);
-                  },
-                ),
-              ],
-            ):SizedBox.shrink(),
-          ),
+        AnimatedSize(
+          duration: duration,
+          curve: Curves.easeInOut,
+          child: isDrawerOpen
+              ? Column(
+                  spacing: 20,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      child: TextWithHash(
+                        text: 'home',
+                        color: widget.currentRoute == Routes.homeScreen
+                            ? Colors.white
+                            : grayColor,
+                      ),
+                      onTap: () {
+                        if (widget.currentRoute != Routes.homeScreen)
+                          context.go(Routes.homeScreen);
+                      },
+                    ),
+                    InkWell(
+                      child: TextWithHash(
+                        text: 'projects',
+                        color: widget.currentRoute == Routes.worksScreen
+                            ? Colors.white
+                            : grayColor,
+                      ),
+                      onTap: () {
+                        if (widget.currentRoute != Routes.worksScreen)
+                          context.go(Routes.worksScreen);
+                      },
+                    ),
+                    InkWell(
+                      child: TextWithHash(
+                        text: 'about-me',
+                        color: widget.currentRoute == Routes.aboutMeScreen
+                            ? Colors.white
+                            : grayColor,
+                      ),
+                      onTap: () {
+                        if (widget.currentRoute != Routes.aboutMeScreen)
+                          context.go(Routes.aboutMeScreen);
+                      },
+                    ),
+                    InkWell(
+                      child: TextWithHash(
+                        text: 'contacts',
+                        color: widget.currentRoute == Routes.contactsScreen
+                            ? Colors.white
+                            : grayColor,
+                      ),
+                      onTap: () {
+                        if (widget.currentRoute != Routes.contactsScreen)
+                          context.go(Routes.contactsScreen);
+                      },
+                    ),
+                  ],
+                )
+              : SizedBox.shrink(),
+        ),
       ]),
     );
   }

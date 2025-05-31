@@ -4,9 +4,9 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-import 'box_widget.dart';
 import '../../constants/colors.dart';
 import '../../constants/text.dart';
+import 'box_widget.dart';
 import 'hover_effect_widget.dart';
 
 class CvDownloadButton extends StatefulWidget {
