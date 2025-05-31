@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # clean and get dependencies
-#flutter clean
-#flutter pub get
+flutter clean
+flutter pub get
 
 # Build the Flutter web app
 flutter build web
