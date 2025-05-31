@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # clean and get dependencies
-flutter clean
+#flutter clean
 flutter pub get
 
 # Build the Flutter web app
@@ -14,7 +14,7 @@ cd build/web
 # Initialize a temporary repo and push to GitHub Pages
 git init
 git add .
-git commit -m "Update Portfolio"
+git commit -m "Update Portfolio $(date +'%d/%m %I:%M %p')"
 git remote add deploy git@github.com:muhamaadessam/muhamaadessam.github.io.git
 git push deploy main --force
 
