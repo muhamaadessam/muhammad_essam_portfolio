@@ -3,17 +3,14 @@ name: Deploy Flutter Web to GitHub Pages
 on:
   push:
     branches:
-      - release
-
-permissions:
-  contents: write
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Setup Flutter
@@ -27,8 +24,14 @@ jobs:
       - name: Build web
         run: flutter build web --release
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build/web
+      - name: Deploy to GitHub Pages repo
+        run: |
+          cd build/web
+          git init
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git remote add origin https://x-access-token:${{ secrets.DEPLOY_TOKEN }}@github.com/muhamaadessam/muhamaadessam.github.io.git
+          git checkout -b main
+          git add .
+          git commit -m "Deploy $(date)"
+          git push -f origin main
