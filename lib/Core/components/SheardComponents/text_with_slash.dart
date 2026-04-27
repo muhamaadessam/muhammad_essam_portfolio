@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/constants/text.dart';
+import '../../../Core/constants/text.dart';
 import '../../constants/colors.dart';
 
 class TextWithSlash extends StatelessWidget {
