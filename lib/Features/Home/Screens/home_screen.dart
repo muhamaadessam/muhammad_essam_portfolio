@@ -63,7 +63,7 @@ Future<void> trackVisitor() async {
   await docRef.set({
     'total_visitors':
         currentCount == 0 ? FieldValue.increment(1) : users.length,
-    'total_visits': FieldValue.increment(1),
+    'total_visites': FieldValue.increment(1),
     'users': {
       visitorId: currentCount + 1,
     }
