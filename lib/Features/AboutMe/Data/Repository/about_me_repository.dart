@@ -3,10 +3,12 @@ import 'package:muhammad_essam_portfolio/Core/Error/failure.dart';
 
 import '../../Domain/Repository/base_about_me_repository.dart';
 import '../DataSource/about_me_local_data_source.dart';
+import '../DataSource/about_me_reomte_data_source.dart';
 import '../Models/fun_facts_model.dart';
 
 class AboutMeRepository extends BaseAboutMeRepository {
-  final BaseAboutMeLocalDataSource baseAboutMeLocalDataSource;
+  // final BaseAboutMeLocalDataSource baseAboutMeLocalDataSource;
+  final BaseAboutMeRemoteDataSource baseAboutMeLocalDataSource;
 
   AboutMeRepository(this.baseAboutMeLocalDataSource);
 

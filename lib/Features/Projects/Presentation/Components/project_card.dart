@@ -5,12 +5,12 @@ import '../../../../Core/components/SheardComponents/box_widget.dart';
 import '../../../../Core/components/SheardComponents/hover_effect_widget.dart';
 import '../../../../Core/constants/text.dart';
 import '../../../../Core/constants/url_launcher.dart';
-import '../../Data/projects_model.dart';
+import '../../Domain/Entities/projects_entity.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({super.key, required this.project});
 
-  final ProjectsModel project;
+  final ProjectsEntity project;
 
   @override
   Widget build(BuildContext context) {
@@ -93,10 +93,10 @@ class ProjectCard extends StatelessWidget {
             child: Row(
               spacing: 16,
               children: [
-                if (project.googlePlayLink.isNotEmpty)
+                if (project.googlePlayLink != null)
                   HoverEffectWidget(
                     onTap: () async {
-                      urlLauncher(project.googlePlayLink);
+                      urlLauncher(project.googlePlayLink!);
                     },
                     child: BoxWidget(
                       child: TextBody16(
@@ -106,7 +106,7 @@ class ProjectCard extends StatelessWidget {
                       color: mainColor,
                     ),
                   ),
-                if (project.appStoreLink.isNotEmpty)
+                if (project.appStoreLink != null)
                   HoverEffectWidget(
                     child: BoxWidget(
                       child: TextBody16(
@@ -116,7 +116,7 @@ class ProjectCard extends StatelessWidget {
                       color: mainColor,
                     ),
                     onTap: () async {
-                      urlLauncher(project.appStoreLink);
+                      urlLauncher(project.appStoreLink!);
                     },
                   ),
               ],

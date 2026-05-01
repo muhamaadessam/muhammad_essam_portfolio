@@ -1,18 +1,13 @@
-class ProjectsModel {
-  final String projectName;
-  final String projectDescription;
-  final String projectImage;
-  final List<String> projectLanguages;
-  final String googlePlayLink;
-  final String appStoreLink;
+import '../../Domain/Entities/projects_entity.dart';
 
+class ProjectsModel extends ProjectsEntity {
   ProjectsModel({
-    required this.projectName,
-    required this.projectDescription,
-    required this.projectImage,
-    required this.projectLanguages,
-    required this.googlePlayLink,
-    required this.appStoreLink,
+    required super.projectName,
+    required super.projectDescription,
+    required super.projectImage,
+    required super.projectLanguages,
+    super.googlePlayLink,
+    super.appStoreLink,
   });
 
   factory ProjectsModel.fromJson(Map<String, dynamic> json) {

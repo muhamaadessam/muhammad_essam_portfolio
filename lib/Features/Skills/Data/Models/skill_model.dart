@@ -12,4 +12,11 @@ class SkillModel extends SkillEntity {
       skills: List<String>.from(json['skills']),
     );
   }
+
+  toMap() {
+    return {
+      'title': title,
+      'skills': skills,
+    };
+  }
 }

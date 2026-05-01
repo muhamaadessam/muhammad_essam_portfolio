@@ -42,6 +42,8 @@ dependencies:
   dartz: ^0.10.1
   equatable: ^2.0.7
   flutter_bloc: ^9.1.1
+  firebase_core: ^4.7.0
+  cloud_firestore: ^6.3.0
 #  flutter_web_plugins: any
 
 dev_dependencies:

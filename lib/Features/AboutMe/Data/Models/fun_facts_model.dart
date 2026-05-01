@@ -6,4 +6,9 @@ class FunFactsModel extends FunFactsEntity {
   factory FunFactsModel.fromJson(Map<String, dynamic> json) {
     return FunFactsModel(facts: json['facts'].cast<String>());
   }
+  toJson() {
+    return {
+      'facts': facts,
+    };
+  }
 }

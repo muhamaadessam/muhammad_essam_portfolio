@@ -58,6 +58,8 @@
 // }
 
 import 'dart:html' as html;
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/colors.dart';
@@ -94,6 +96,7 @@ class _CvDownloadButtonState extends State<CvDownloadButton> {
         color: mainColor,
       ),
       onTap: () {
+        incrementCvDownload();
         downloadFromUrl(
           'https://drive.google.com/uc?export=download&id=11R3XbF-0bTpnFe4wCdOYy9Qgw4ISQKEc',
           'Muhammad_Essam_CV.pdf',
@@ -101,4 +104,16 @@ class _CvDownloadButtonState extends State<CvDownloadButton> {
       },
     );
   }
+}
+
+Future<void> incrementCvDownload() async {
+  final docRef =
+      FirebaseFirestore.instance.collection('stats').doc('cv_downloads');
+
+  await docRef.set(
+    {
+      'count': FieldValue.increment(1),
+    },
+    SetOptions(merge: true),
+  );
 }
