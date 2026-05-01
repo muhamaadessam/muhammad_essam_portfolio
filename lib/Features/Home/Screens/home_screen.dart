@@ -50,21 +50,23 @@ String getVisitorId() {
 Future<void> trackVisitor() async {
   final visitorId = getVisitorId();
 
-  final docRef = FirebaseFirestore.instance.collection('stats').doc('visitors');
+  final docRef = FirebaseFirestore.instance
+      .collection('stats')
+      .doc('visitors');
 
   final snapshot = await docRef.get();
 
-  final data = snapshot.data();
+  final data = snapshot.data() ?? {};
 
-  final alreadyVisited =
-      data != null && (data['users'] ?? {}).containsKey(visitorId);
+  final users =
+  Map<String, dynamic>.from(data['users'] ?? {});
 
-  if (alreadyVisited) return;
+  final currentCount = users[visitorId] ?? 0;
 
   await docRef.set({
-    'total': FieldValue.increment(1),
+    'total_visits': FieldValue.increment(1),
     'users': {
-      visitorId: true,
+      visitorId: currentCount + 1,
     }
   }, SetOptions(merge: true));
 }
