@@ -23,7 +23,7 @@ class ProjectCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
+          Image.network(
             project.projectImage,
             width: double.infinity,
           ),
