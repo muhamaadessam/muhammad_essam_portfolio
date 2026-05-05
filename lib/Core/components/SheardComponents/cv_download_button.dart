@@ -1,67 +1,9 @@
-// import 'dart:html' as html;
-// import 'dart:typed_data';
-//
-// import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart' show rootBundle;
-//
-// import '../../constants/colors.dart';
-// import '../../constants/text.dart';
-// import 'box_widget.dart';
-// import 'hover_effect_widget.dart';
-//
-// class CvDownloadButton extends StatefulWidget {
-//   const CvDownloadButton({
-//     super.key,
-//   });
-//
-//   @override
-//   State<CvDownloadButton> createState() => _CvDownloadButtonState();
-// }
-//
-// class _CvDownloadButtonState extends State<CvDownloadButton> {
-//   bool _isHovering = false;
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     Future<void> downloadPdfFromAssets(
-//         String assetPath, String filename) async {
-//       // Load PDF file from assets as bytes
-//       final bytes = await rootBundle.load(assetPath);
-//       final Uint8List list = bytes.buffer.asUint8List();
-//
-//       // Create a blob and download
-//       final blob = html.Blob([list], 'application/pdf');
-//       final url = html.Url.createObjectUrlFromBlob(blob);
-//
-//       final anchor = html.AnchorElement(href: url)
-//         ..setAttribute('download', filename)
-//         ..click();
-//
-//       html.Url.revokeObjectUrl(url);
-//     }
-//
-//     return HoverEffectWidget(
-//       child: BoxWidget(
-//         isHovering: _isHovering,
-//         child: TextBody16(
-//           'Download CV',
-//           color: Colors.white,
-//         ),
-//         color: mainColor,
-//       ),
-//       onTap: () {
-//         downloadPdfFromAssets(
-//             'assets/pdfs/Muhammad Essam.pdf', 'Muhammad Essam.pdf');
-//       },
-//     );
-//   }
-// }
-
 import 'dart:html' as html;
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import '../../../Features/Home/Screens/home_screen.dart';
 import '../../constants/colors.dart';
 import '../../constants/text.dart';
 import 'box_widget.dart';
@@ -78,7 +20,7 @@ class _CvDownloadButtonState extends State<CvDownloadButton> {
   bool _isHovering = false;
 
   void downloadFromUrl(String url, String filename) {
-    final anchor = html.AnchorElement(href: url)
+    html.AnchorElement(href: url)
       ..setAttribute('download', filename)
       ..target = '_blank' // مهم لو اللينك Google Drive
       ..click();
@@ -107,13 +49,42 @@ class _CvDownloadButtonState extends State<CvDownloadButton> {
 }
 
 Future<void> incrementCvDownload() async {
+  final visitorId = getVisitorId();
+
   final docRef =
       FirebaseFirestore.instance.collection('stats').doc('cv_downloads');
 
+  final snapshot = await docRef.get();
+
+  final data = snapshot.data() ?? {};
+
+  final users = Map<String, dynamic>.from(data['users'] ?? {});
+
+  final currentCount = users[visitorId] ?? 0;
+
   await docRef.set(
     {
-      'count': FieldValue.increment(1),
+      'total_downloads': FieldValue.increment(1),
+      'total_downloaders': currentCount == 0
+          ? FieldValue.increment(1)
+          : data['total_downloaders'] ?? 0,
+      'users': {
+        visitorId: currentCount + 1,
+      },
     },
     SetOptions(merge: true),
   );
 }
+
+// String getVisitorId() {
+//   final storage = html.window.localStorage;
+//
+//   if (storage['visitor_id'] != null) {
+//     return storage['visitor_id']!;
+//   }
+//
+//   final newId = DateTime.now().millisecondsSinceEpoch.toString();
+//   storage['visitor_id'] = newId;
+//
+//   return newId;
+// }
