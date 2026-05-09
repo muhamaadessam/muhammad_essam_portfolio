@@ -44,6 +44,7 @@ dependencies:
   flutter_bloc: ^9.1.1
   firebase_core: ^4.7.0
   cloud_firestore: ^6.3.0
+  shared_preferences: ^2.5.5
 #  flutter_web_plugins: any
 
 dev_dependencies:

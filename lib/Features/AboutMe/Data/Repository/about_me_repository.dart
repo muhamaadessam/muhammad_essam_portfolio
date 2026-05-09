@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:muhammad_essam_portfolio/Core/Error/failure.dart';
 
 import '../../Domain/Repository/base_about_me_repository.dart';
-import '../DataSource/about_me_local_data_source.dart';
 import '../DataSource/about_me_reomte_data_source.dart';
 import '../Models/fun_facts_model.dart';
 

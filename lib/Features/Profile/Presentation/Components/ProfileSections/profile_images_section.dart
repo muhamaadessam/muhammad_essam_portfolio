@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../Core/Network/Local/cache_helper.dart';
+import '../../../../../Core/Network/Local/constant.dart';
 import '../../../../../Core/constants/colors.dart';
 import '../../../../../res/assets.dart';
 
@@ -10,9 +12,33 @@ class ProfileImagesSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset(
-          Assets.profileImage,
-          width: 400,
+        Stack(
+          alignment: Alignment.center,
+          children: [
+            Positioned(
+              top: 80,
+              left: 0,
+              child: Image.asset(
+                Assets.essamLogoBorder,
+                width: 140,
+              ),
+            ),
+            Image.network(
+              CacheHelper.get(key: AppStorage.image),
+              width: 350,
+            ),
+            Positioned(
+              bottom: 80,
+              right: 0,
+              child: Image.asset(
+                Assets.dots,
+                width: 80,
+              ),
+            ),
+            SizedBox(
+              width: 400,
+            ),
+          ],
         ),
         Container(
           width: 380,

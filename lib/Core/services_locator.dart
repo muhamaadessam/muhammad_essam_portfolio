@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:muhammad_essam_portfolio/Features/Projects/Domain/UseCases/get_projects_use_case.dart';
-import 'package:muhammad_essam_portfolio/Features/Skills/Data/DataSource/skills_remote_data_source.dart';
 import 'package:muhammad_essam_portfolio/Features/Skills/Data/DataSource/skills_local_data_source.dart';
+import 'package:muhammad_essam_portfolio/Features/Skills/Data/DataSource/skills_remote_data_source.dart';
 
 import '../Features/AboutMe/Data/DataSource/about_me_local_data_source.dart';
 import '../Features/AboutMe/Data/DataSource/about_me_reomte_data_source.dart';

@@ -7,6 +7,7 @@ class Assets {
   static const String ceoBuffet = 'assets/images/ceoBuffet.jpg';
   static const String dots = 'assets/icons/dots.png';
   static const String essamLogo = 'assets/logos/essamLogo.png';
+  static const String essamLogoBorder = 'assets/logos/essamLogoBorder.png';
   static const String essamLogoWithText = 'assets/logos/essamLogoWithText.png';
   static const String facebook = 'assets/icons/facebook.png';
   static const String firaCodeRegular = 'assets/fonts/FiraCode-Regular.ttf';

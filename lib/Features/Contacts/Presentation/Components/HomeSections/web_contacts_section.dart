@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/box_widget.dart';
 
+import '../../../../../Core/Network/Local/cache_helper.dart';
+import '../../../../../Core/Network/Local/constant.dart';
 import '../../../../../Core/components/SheardComponents/hash_head_section.dart';
 import '../../../../../Core/components/SheardComponents/text_with_slash.dart';
 import '../../../../../Core/constants/colors.dart';
@@ -47,7 +49,7 @@ class WebContactsSection extends StatelessWidget {
                       color: Colors.white,
                     ),
                     TextBody16(
-                      'Whatsapp: +20 101 702 2791',
+                      'Whatsapp: ${CacheHelper.get(key: AppStorage.phone)}',
                       color: Colors.white,
                     ),
                   ],

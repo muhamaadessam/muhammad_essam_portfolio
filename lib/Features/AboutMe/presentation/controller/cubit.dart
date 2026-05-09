@@ -5,8 +5,13 @@ import '../../../../Core/use_cases/base_use_cases.dart';
 import 'state.dart';
 
 class AboutMeCubit extends Cubit<AboutMeState> {
-  AboutMeCubit(this._getFunFactsUseCase) : super(AboutMeState());
+  AboutMeCubit(this._getFunFactsUseCase)
+      : super(AboutMeState());
   final GetFunFactsUseCase _getFunFactsUseCase;
+
+  init() async {
+    await getFunFacts();
+  }
 
   Future<void> getFunFacts() async {
     emit(state.copyWith(status: AboutMeStatus.loading));

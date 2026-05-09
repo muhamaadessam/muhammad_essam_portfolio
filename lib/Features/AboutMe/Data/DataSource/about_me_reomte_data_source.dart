@@ -6,6 +6,7 @@ import '../Models/fun_facts_model.dart';
 
 abstract class BaseAboutMeRemoteDataSource {
   Future<Either<Failure, FunFactsModel>> getFunFacts();
+
 }
 
 class AboutMeRemoteDataSource implements BaseAboutMeRemoteDataSource {
@@ -29,4 +30,5 @@ class AboutMeRemoteDataSource implements BaseAboutMeRemoteDataSource {
       return Left(DatabaseFailure(e.toString()));
     }
   }
+
 }

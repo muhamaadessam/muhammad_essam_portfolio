@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/box_widget.dart';
 import 'package:muhammad_essam_portfolio/Core/components/SheardComponents/hover_effect_widget.dart';
 
+import '../../../../../Core/Network/Local/cache_helper.dart';
+import '../../../../../Core/Network/Local/constant.dart';
 import '../../../../../Core/components/SheardComponents/cv_download_button.dart';
 import '../../../../../Core/constants/colors.dart';
 import '../../../../../Core/constants/text.dart';
@@ -19,7 +21,7 @@ class ProfileTextSection extends StatelessWidget {
       children: [
         RichText(
           text: TextSpan(
-            text: 'Muhammad Essam is a',
+            text: '${CacheHelper.get(key: AppStorage.name)} is a',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 32,
@@ -28,7 +30,7 @@ class ProfileTextSection extends StatelessWidget {
             ),
             children: [
               TextSpan(
-                text: ' Flutter Developer',
+                text: ' ${CacheHelper.get(key: AppStorage.jopTitle)}',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 32,

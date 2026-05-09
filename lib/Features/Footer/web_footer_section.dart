@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/Core/constants/colors.dart';
 import 'package:muhammad_essam_portfolio/Core/constants/text.dart';
 
+import '../../Core/Network/Local/cache_helper.dart';
+import '../../Core/Network/Local/constant.dart';
 import '../../Core/components/CustomWidgets/icon_link.dart';
 import '../../Core/constants/url_launcher.dart';
 import '../../res/assets.dart';
@@ -25,7 +27,7 @@ class WebFooterSection extends StatelessWidget {
             children: [
               footerSection(),
               TextBody16(
-                '©Copyright 2025. Made by Muhammad Essam',
+                '©Copyright 2025. Made by ${CacheHelper.get(key: AppStorage.name)}',
                 color: grayColor,
                 fontSize: 12,
               ),
@@ -46,11 +48,11 @@ class WebFooterSection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextBody16(
-              'Muhammad Essam',
+              '${CacheHelper.get(key: AppStorage.name)}',
               color: Colors.white,
             ),
             TextBody16(
-              'Flutter Developer',
+              '${CacheHelper.get(key: AppStorage.jopTitle)}',
               color: grayColor,
             ),
           ],

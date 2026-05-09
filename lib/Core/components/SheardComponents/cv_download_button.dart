@@ -75,16 +75,3 @@ Future<void> incrementCvDownload() async {
     SetOptions(merge: true),
   );
 }
-
-// String getVisitorId() {
-//   final storage = html.window.localStorage;
-//
-//   if (storage['visitor_id'] != null) {
-//     return storage['visitor_id']!;
-//   }
-//
-//   final newId = DateTime.now().millisecondsSinceEpoch.toString();
-//   storage['visitor_id'] = newId;
-//
-//   return newId;
-// }
