@@ -26,6 +26,7 @@ class ProjectCard extends StatelessWidget {
           Image.network(
             project.projectImage,
             width: double.infinity,
+            fit: BoxFit.cover,
           ),
           Container(
             color: grayColor,
