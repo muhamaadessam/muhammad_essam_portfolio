@@ -28,8 +28,6 @@ class MobileProjectsScreen extends StatelessWidget {
                   ProjectsSection(
                     inHome: false,
                   ),
-                  // MobileAboutMeSection(inHome: false,),
-                  // MobileSkillsSection(inHome: false,),
                 ],
               ),
             ),

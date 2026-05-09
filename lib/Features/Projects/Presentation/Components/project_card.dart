@@ -90,36 +90,24 @@ class ProjectCard extends StatelessWidget {
             ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Row(
+            child: Wrap(
               spacing: 16,
-              children: [
-                if (project.googlePlayLink != null)
-                  HoverEffectWidget(
-                    onTap: () async {
-                      urlLauncher(project.googlePlayLink!);
-                    },
-                    child: BoxWidget(
-                      child: TextBody16(
-                        'Play Store',
-                        color: grayColor,
-                      ),
-                      color: mainColor,
+              runSpacing: 16,
+              children: List.generate(
+                project.links.length,
+                (index) => HoverEffectWidget(
+                  onTap: () async {
+                    urlLauncher(project.links[index].link);
+                  },
+                  child: BoxWidget(
+                    child: TextBody16(
+                      project.links[index].title,
+                      color: grayColor,
                     ),
+                    color: mainColor,
                   ),
-                if (project.appStoreLink != null)
-                  HoverEffectWidget(
-                    child: BoxWidget(
-                      child: TextBody16(
-                        'App Store',
-                        color: grayColor,
-                      ),
-                      color: mainColor,
-                    ),
-                    onTap: () async {
-                      urlLauncher(project.appStoreLink!);
-                    },
-                  ),
-              ],
+                ),
+              ),
             ),
           ),
         ],
