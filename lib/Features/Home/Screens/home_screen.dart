@@ -1,6 +1,7 @@
 import 'dart:html' as html;
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:muhammad_essam_portfolio/Features/Home/Screens/tablet_home_screen.dart';
@@ -98,6 +99,7 @@ Future<void> sendTelegramMessage(String message) async {
 }
 
 Future<void> trackVisitor() async {
+  if (kDebugMode) return;
   final visitorId = getVisitorId();
 
   final docRef = FirebaseFirestore.instance.collection('stats').doc('visitors');

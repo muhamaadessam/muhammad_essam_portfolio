@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:muhammad_essam_portfolio/Core/constants/colors.dart';
+import 'package:muhammad_essam_portfolio/res/assets.dart';
 
 import '../../../../Core/components/SheardComponents/box_widget.dart';
 import '../../../../Core/components/SheardComponents/hover_effect_widget.dart';
@@ -165,9 +166,16 @@ class ProjectCard extends StatelessWidget {
                     urlLauncher(project.links[index].link);
                   },
                   child: BoxWidget(
-                    child: TextBody16(
-                      project.links[index].title,
-                      color: grayColor,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        _getLinkIcon(project.links[index].title),
+                        const SizedBox(width: 8),
+                        TextBody16(
+                          project.links[index].title,
+                          color: grayColor,
+                        ),
+                      ],
                     ),
                     color: mainColor,
                   ),
@@ -193,5 +201,79 @@ class ProjectCard extends StatelessWidget {
       default:
         return grayColor;
     }
+  }
+
+  Widget _getLinkIcon(String title) {
+    final lowerTitle = title.toLowerCase();
+
+    // Check custom asset icons first
+    if (lowerTitle.contains('github') ||
+        lowerTitle.contains('git') ||
+        lowerTitle.contains('repo') ||
+        lowerTitle.contains('code')) {
+      return Image.asset(
+        Assets.github,
+        width: 16,
+        height: 16,
+        color: grayColor,
+      );
+    } else if (lowerTitle.contains('linkedin')) {
+      return Image.asset(
+        Assets.linkedin,
+        width: 16,
+        height: 16,
+        color: grayColor,
+      );
+    } else if (lowerTitle.contains('facebook')) {
+      return Image.asset(
+        Assets.facebook,
+        width: 16,
+        height: 16,
+        color: grayColor,
+      );
+    } else if (lowerTitle.contains('instagram')) {
+      return Image.asset(
+        Assets.instagram,
+        width: 16,
+        height: 16,
+        color: grayColor,
+      );
+    } else if (lowerTitle.contains('whatsapp')) {
+      return Image.asset(
+        Assets.whatsapp,
+        width: 16,
+        height: 16,
+        color: grayColor,
+      );
+    }
+
+    // Fallback to Material icons
+    IconData iconData = Icons.link;
+    if (lowerTitle.contains('play') ||
+        lowerTitle.contains('google') ||
+        lowerTitle.contains('android')) {
+      iconData = Icons.android_rounded;
+    } else if (lowerTitle.contains('apple') ||
+        lowerTitle.contains('ios') ||
+        lowerTitle.contains('app store')) {
+      iconData = Icons.apple;
+    } else if (lowerTitle.contains('website') || lowerTitle.contains('web')) {
+      iconData = Icons.web;
+    } else if (lowerTitle.contains('microsoft') ||
+        lowerTitle.contains('windows')) {
+      iconData = Icons.window;
+    } else if (lowerTitle.contains('linux')) {
+      iconData = Icons.computer;
+    } else if (lowerTitle.contains('figma') || lowerTitle.contains('design')) {
+      iconData = Icons.design_services;
+    } else if (lowerTitle.contains('flutter')) {
+      iconData = Icons.flutter_dash;
+    }
+
+    return Icon(
+      iconData,
+      size: 16,
+      color: grayColor,
+    );
   }
 }
