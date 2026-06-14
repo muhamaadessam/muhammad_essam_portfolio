@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:muhammad_essam_portfolio/Features/AboutMe/presentation/Components/MyFunFactsSections/fun_facts_skeleton.dart';
+
 import '../../../../../Core/components/SheardComponents/box_widget.dart';
 import '../../../../../Core/constants/colors.dart';
 import '../../../../../Core/constants/text.dart';
@@ -15,7 +17,7 @@ class FunFactWidget extends StatelessWidget {
     return BlocBuilder<AboutMeCubit, AboutMeState>(
       builder: (context, state) {
         if (state.status != AboutMeStatus.loaded) {
-          return const Center(child: CircularProgressIndicator());
+          return const FunFactsSkeleton();
         }
         return Wrap(
           spacing: 16,

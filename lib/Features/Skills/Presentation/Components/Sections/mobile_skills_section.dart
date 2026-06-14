@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:muhammad_essam_portfolio/Features/Skills/Presentation/controller/skills/cubit.dart';
 import 'package:muhammad_essam_portfolio/res/assets.dart';
 
+import 'package:muhammad_essam_portfolio/Features/Skills/Presentation/Components/skills_section_skeleton.dart';
+
 import '../../../../../Core/components/SheardComponents/hash_head_section.dart';
 import '../../controller/skills/state.dart';
 import '../skill_card.dart';
@@ -25,7 +27,7 @@ class MobileSkillsSection extends StatelessWidget {
         BlocBuilder<SkillsCubit, SkillsState>(
           builder: (context, state) {
             if (state.status == SkillsStatus.loading) {
-              return const Center(child: CircularProgressIndicator());
+              return const SkillsSectionSkeleton();
             }
             return Column(
               spacing: 16,
