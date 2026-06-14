@@ -39,6 +39,70 @@ class ProjectCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 8,
               children: [
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    if (project.isFeatured)
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: mainColor.withValues(alpha: 0.1),
+                          border: Border.all(color: mainColor),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            const Icon(Icons.star, size: 12, color: mainColor),
+                            const SizedBox(width: 4),
+                            const Text(
+                              'FEATURED',
+                              style: TextStyle(
+                                color: mainColor,
+                                fontSize: 10,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'FiraCode-Regular',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: grayColor),
+                      ),
+                      child: Text(
+                        project.category.toUpperCase(),
+                        style: TextStyle(
+                          color: grayColor,
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'FiraCode-Regular',
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        border:
+                            Border.all(color: _getStatusColor(project.status)),
+                      ),
+                      child: Text(
+                        project.status.toUpperCase(),
+                        style: TextStyle(
+                          color: _getStatusColor(project.status),
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'FiraCode-Regular',
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 TextBody24(
                   project.projectName,
                   color: Colors.white,
@@ -114,5 +178,20 @@ class ProjectCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Color _getStatusColor(String status) {
+    switch (status.toLowerCase()) {
+      case 'active':
+        return const Color(0xff2ecc71);
+      case 'completed':
+        return const Color(0xff3498db);
+      case 'in progress':
+        return const Color(0xfff1c40f);
+      case 'planned':
+        return const Color(0xff9b59b6);
+      default:
+        return grayColor;
+    }
   }
 }

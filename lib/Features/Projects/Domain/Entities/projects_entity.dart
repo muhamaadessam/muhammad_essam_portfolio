@@ -8,7 +8,9 @@ class ProjectsEntity extends Equatable {
   final String projectImage;
   final List<String> projectLanguages;
   final List<LinkEntity> links;
-
+  final String category;
+  final String status;
+  final bool isFeatured;
 
   ProjectsEntity({
     required this.projectName,
@@ -16,7 +18,9 @@ class ProjectsEntity extends Equatable {
     required this.projectImage,
     required this.projectLanguages,
     required this.links,
-
+    required this.category,
+    required this.status,
+    required this.isFeatured,
   });
 
   @override
@@ -26,6 +30,8 @@ class ProjectsEntity extends Equatable {
         projectImage,
         projectLanguages,
         links,
-
+        category,
+        status,
+        isFeatured,
       ];
 }

@@ -3,8 +3,6 @@ class Assets {
   Assets._();
 
   static const String aboutMeImage = 'assets/images/aboutMeImage.png';
-  static const String ceo = 'assets/images/ceo.jpg';
-  static const String ceoBuffet = 'assets/images/ceoBuffet.jpg';
   static const String dots = 'assets/icons/dots.png';
   static const String essamLogo = 'assets/logos/essamLogo.png';
   static const String essamLogoBorder = 'assets/logos/essamLogoBorder.png';
@@ -14,18 +12,14 @@ class Assets {
   static const String github = 'assets/icons/github.png';
   static const String instagram = 'assets/icons/instagram.png';
   static const String linkedin = 'assets/icons/linkedin.png';
-  static const String mudawi = 'assets/images/mudawi.jpg';
-  static const String muhammadEssam = 'assets/pdfs/Muhammad Essam.pdf';
-  static const String myFunFacts = 'assets/images/myFunFacts.png';
   static const String myFunFactsJson = 'assets/json/myFunFacts.json';
   static const String myFunFactsImage = 'assets/images/myFunFactsImage.png';
-  static const String profileImage = 'assets/images/profileImage.png';
   static const String projects = 'assets/json/projects.json';
   static const String rectangle = 'assets/icons/rectangle.png';
   static const String rightRectangle = 'assets/icons/rightRectangle.png';
   static const String skillsJson = 'assets/json/skills.json';
   static const String skillsImage = 'assets/images/skillsImage.png';
-  static const String sportsmanship = 'assets/images/sportsmanship.jpg';
   static const String whatsapp = 'assets/icons/whatsapp.png';
 
 }
+
