@@ -25,9 +25,7 @@ mainInitialize() async {
   WidgetsFlutterBinding.ensureInitialized();
   await ServicesLocator().init();
   await CacheHelper.init();
-  // setUrlStrategy(PathUrlStrategy());
-  // cleanRedirect();
-  setUrlStrategy(HashUrlStrategy());
+  usePathUrlStrategy();
   AppPages.initializeRouter();
   WidgetsFlutterBinding.ensureInitialized();
 

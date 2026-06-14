@@ -1,49 +1,22 @@
-<!--<!DOCTYPE html>-->
-<!--<script>-->
-<!--    // Capture full path without triggering infinite redirects-->
-<!--    const path = window.location.pathname + window.location.search + window.location.hash;-->
-<!--    if (!window.location.search.includes('redirect=')) {-->
-<!--      sessionStorage.setItem('flutter_redirect', path);-->
-<!--      window.location.replace('/index.html?redirect=' + encodeURIComponent(path));-->
-<!--    }-->
-<!--</script>-->
-
-<!-- web/404.html -->
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Redirecting...</title>
-    <!--    <script type="text/javascript">-->
-    <!--        // Get the current full path from location-->
-    <!--        var redirectTo = location.pathname + location.search + location.hash;-->
-    <!--        // Redirect to index.html with original path as a query parameter-->
-    <!--        location.replace("/index.html?redirect=" + encodeURIComponent(redirectTo));-->
-    <!--    </script>-->
-
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // MIT License
+    // https://github.com/rafgraph/spa-github-pages
+    var l = window.location;
+    l.replace(
+      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+      l.pathname.split('/').slice(0, 1).join('/') + '/?/' +
+      l.pathname.slice(1).split('/').slice(1).join('/') +
+      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      l.hash
+    );
+  </script>
 </head>
 <body>
-<p>Redirecting...</p>
-<script>
-    document.addEventListener('DOMContentLoaded', () =>{
-      // Handle redirect before Flutter loads
-      const urlParams = new URLSearchParams(window.location.search);
-      const redirectParam = urlParams.get('redirect');
-
-      if (redirectParam) {
-      console.log(redirectParam);
-            const decodedPath = decodeURIComponent(redirectParam);
-            // Clean URL before Flutter initializes
-            window.history.replaceState({}, '', decodedPath);
-      }
-
-      // Initialize Flutter after URL cleanup
-          setTimeout(() => {
-            const script = document.createElement('script');
-            script.src = 'flutter_bootstrap.js';
-            document.body.appendChild(script);
-          }, 50);
-    });
-</script>
 </body>
 </html>
