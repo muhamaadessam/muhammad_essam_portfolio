@@ -1,9 +1,8 @@
-import 'dart:html' as html;
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:muhammad_essam_portfolio/Core/Network/Local/cache_helper.dart';
 import 'package:muhammad_essam_portfolio/Features/Home/Screens/tablet_home_screen.dart';
 import 'package:muhammad_essam_portfolio/Features/Home/Screens/web_home_screen.dart';
 
@@ -37,14 +36,14 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 String getVisitorId() {
-  final storage = html.window.localStorage;
+  final String? visitorId = CacheHelper.get(key: 'visitor_id');
 
-  if (storage['visitor_id'] != null) {
-    return storage['visitor_id']!;
+  if (visitorId != null) {
+    return visitorId;
   }
 
   final newId = DateTime.now().millisecondsSinceEpoch.toString();
-  storage['visitor_id'] = newId;
+  CacheHelper.put(key: 'visitor_id', value: newId);
 
   return newId;
 }
@@ -127,10 +126,10 @@ Future<void> trackVisitor() async {
   String message;
   if (isNewVisitor) {
     message =
-        '🎉 *New Unique Visitor!*\n\nA new user has visited your portfolio!\nTotal Unique Visitors: `$totalVisitors`';
+        '🎉 *New Unique Visitor!*\n\n*Visitor ID:* `$visitorId`\nA new user has visited your portfolio!\nTotal Unique Visitors: `$totalVisitors`';
   } else {
     message =
-        '👀 *Portfolio Visit!*\n\nA return visitor just opened your portfolio.\nTotal Visits: `$totalVisits`';
+        '👀 *Portfolio Visit!*\n\n*Visitor ID:* `$visitorId`\nA return visitor just opened your portfolio.\nTotal Visits: `$totalVisits`';
   }
 
   await sendTelegramMessage(message);

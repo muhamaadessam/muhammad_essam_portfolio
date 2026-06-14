@@ -1,4 +1,5 @@
-import 'dart:html' as html;
+import 'package:flutter/foundation.dart';
+import 'package:web/web.dart' as web;
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +21,11 @@ class _CvDownloadButtonState extends State<CvDownloadButton> {
   bool _isHovering = false;
 
   void downloadFromUrl(String url, String filename) {
-    html.AnchorElement(href: url)
-      ..setAttribute('download', filename)
-      ..target = '_blank' // مهم لو اللينك Google Drive
-      ..click();
+    final anchor = web.HTMLAnchorElement()
+      ..href = url
+      ..download = filename
+      ..target = '_blank';
+    anchor.click();
   }
 
   @override
@@ -49,6 +51,7 @@ class _CvDownloadButtonState extends State<CvDownloadButton> {
 }
 
 Future<void> incrementCvDownload() async {
+  if (kDebugMode) return;
   final visitorId = getVisitorId();
 
   final docRef =
@@ -61,6 +64,11 @@ Future<void> incrementCvDownload() async {
   final users = Map<String, dynamic>.from(data['users'] ?? {});
 
   final currentCount = users[visitorId] ?? 0;
+  final isNewDownloader = currentCount == 0;
+  final totalDownloads = (data['total_downloads'] ?? 0) + 1;
+  final totalDownloaders = isNewDownloader
+      ? (data['total_downloaders'] ?? 0) + 1
+      : (data['total_downloaders'] ?? 0);
 
   await docRef.set(
     {
@@ -74,4 +82,15 @@ Future<void> incrementCvDownload() async {
     },
     SetOptions(merge: true),
   );
+
+  String message;
+  if (isNewDownloader) {
+    message =
+        '📥 *New CV Download!*\n\n*Visitor ID:* `$visitorId`\nA new user has downloaded your CV!\nTotal Unique Downloaders: `$totalDownloaders`';
+  } else {
+    message =
+        '📥 *CV Downloaded Again!*\n\n*Visitor ID:* `$visitorId`\nA return user has downloaded your CV.\nTotal Downloads: `$totalDownloads`';
+  }
+
+  await sendTelegramMessage(message);
 }
