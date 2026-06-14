@@ -211,38 +211,33 @@ class ProjectCard extends StatelessWidget {
         lowerTitle.contains('git') ||
         lowerTitle.contains('repo') ||
         lowerTitle.contains('code')) {
-      return Image.asset(
-        Assets.github,
-        width: 16,
-        height: 16,
+      return ImageIcon(
+        const AssetImage(Assets.github),
+        size: 16,
         color: grayColor,
       );
     } else if (lowerTitle.contains('linkedin')) {
-      return Image.asset(
-        Assets.linkedin,
-        width: 16,
-        height: 16,
+      return ImageIcon(
+        const AssetImage(Assets.linkedin),
+        size: 16,
         color: grayColor,
       );
     } else if (lowerTitle.contains('facebook')) {
-      return Image.asset(
-        Assets.facebook,
-        width: 16,
-        height: 16,
+      return ImageIcon(
+        const AssetImage(Assets.facebook),
+        size: 16,
         color: grayColor,
       );
     } else if (lowerTitle.contains('instagram')) {
-      return Image.asset(
-        Assets.instagram,
-        width: 16,
-        height: 16,
+      return ImageIcon(
+        const AssetImage(Assets.instagram),
+        size: 16,
         color: grayColor,
       );
     } else if (lowerTitle.contains('whatsapp')) {
-      return Image.asset(
-        Assets.whatsapp,
-        width: 16,
-        height: 16,
+      return ImageIcon(
+        const AssetImage(Assets.whatsapp),
+        size: 16,
         color: grayColor,
       );
     }
