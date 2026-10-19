@@ -1,9 +1,10 @@
 name: Deploy Flutter Web to GitHub Pages
 
+# Manual only. The target Pages repository (muhamaadessam.github.io) now holds
+# the Next.js portfolio source, and this job force-pushes over its main branch.
+# Do not re-enable an automatic trigger without changing the deploy target.
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
